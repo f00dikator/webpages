@@ -1,0 +1,1159 @@
+<!doctype html>
+<html class="home blog no-js" lang="en-US">
+<head>
+
+	<meta charset="UTF-8" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+
+	<link rel="pingback" href="https://blogs.securiteam.com/xmlrpc.php" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+
+<title>SecuriTeam Blogs | Thoughts about the world of security</title>
+<link rel="icon" type="image/png" href="https://blogs.securiteam.com/wp-content/uploads/2015/07/securiteam-icon.png" />
+
+<link rel="alternate" type="application/rss+xml" title="SecuriTeam Blogs &raquo; Feed" href="https://blogs.securiteam.com/index.php/feed" />
+<link rel="alternate" type="application/rss+xml" title="SecuriTeam Blogs &raquo; Comments Feed" href="https://blogs.securiteam.com/index.php/comments/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/blogs.securiteam.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.4"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='crayon-css'  href='https://blogs.securiteam.com/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css?ver=2.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-theme-classic-css'  href='https://blogs.securiteam.com/wp-content/plugins/crayon-syntax-highlighter/themes/classic/classic.css?ver=2.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='crayon-font-monaco-css'  href='https://blogs.securiteam.com/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css?ver=2.7.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css'  href='https://blogs.securiteam.com/wp-content/plugins/meanthemes-tools/assets/css/font-awesome.min.css?ver=4.3.0' type='text/css' media='screen' />
+<link rel='stylesheet' id='prismcss-css'  href='https://blogs.securiteam.com/wp-content/plugins/pastacode/css/prism.css?ver=1.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='prism-highlightcss-css'  href='https://blogs.securiteam.com/wp-content/plugins/pastacode/plugins/line-highlight/prism-line-highlight.css?ver=1.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='default-css'  href='https://blogs.securiteam.com/wp-content/themes/textual/style.css?ver=1.0.2' type='text/css' media='screen' />
+<link rel='stylesheet' id='print-css'  href='https://blogs.securiteam.com/wp-content/themes/textual/print.css?ver=1.0.2' type='text/css' media='print' />
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel='stylesheet' id='lt-ie9-css'  href='https://blogs.securiteam.com/wp-content/themes/textual/ie.css?ver=1.0.2' type='text/css' media='screen' />
+<![endif]-->
+<link rel='stylesheet' id='slb_core-css'  href='https://blogs.securiteam.com/wp-content/plugins/simple-lightbox/client/css/app.css?ver=2.4.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://blogs.securiteam.com/wp-includes/js/jquery/jquery.js?ver=1.11.2'></script>
+<script type='text/javascript' src='https://blogs.securiteam.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"2.7.1","is_admin":"0","ajaxurl":"https:\/\/blogs.securiteam.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blogs.securiteam.com/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=2.7.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blogs.securiteam.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blogs.securiteam.com/wp-includes/wlwmanifest.xml" /> 
+<style type="text/css">
+.social-fa {padding: 0 4px;vertical-align:middle;}.social-fa .fa {text-indent: 0;font-size: 14px;font-size: 1.4rem;line-height: 10px;color:#000; -o-transition: opacity 0.5s ease-in;-webkit-transition: opacity 0.5s ease-in;-moz-transition: opacity 0.5s ease-in;transition: opacity 0.5s ease-in;opacity: 0.5;filter: alpha(opacity=50);}.social-fa:hover .fa {opacity: 0.9;filter: alpha(opacity=90);}.social-fa.white .fa {color:#fff;}.social-fa .fa .i {position: absolute; left: -99999px; font-size: 0;}
+</style>
+<meta property="og:title" content="SecuriTeam Blogs Thoughts about the world of security" /><meta property="og:type" content="website" /><meta property="og:url" content="https://blogs.securiteam.com/" /><meta property="og:site_name" content="SecuriTeam Blogs" /><meta property="og:description" content="Thoughts about the world of security" />    <style type="text/css">
+		
+					body,
+			.meta.sharer li a, .author-wrap a.author-socials, .author-enhanced a.author-socials, .meta li.tag {
+				color: #343839;
+			}
+
+							a,
+			.main-header nav#nav ul > li.current_page_item > a,
+			.main-header nav#nav ul > li.current-menu-item > a,
+			.main-header nav#nav ul > li.current_page_ancestor > a,
+			.main-header nav#nav ul > li.current-post-ancestor > a,
+			.main-header nav#nav ul > li.current-page-ancestor > a {
+				color: #2b4cc4;
+			}
+
+			.main-header ul ul, .tagcloud a {
+				border-color: #2b4cc4;
+			}
+
+			button, input[type="submit"], .comment-reply-link {
+				border-color: #2b4cc4 !important;
+				color: #2b4cc4 !important;
+			}
+		
+								
+					body, html {
+				background-color: #e0e0e0;
+			}
+
+		
+
+																		.meta li, .meta.bottom li a {
+						background-color: #e28528;
+					}
+																					.sidebar-on .sidebar, .post.result,
+					.post_format-post-format-aside .post-content, .post_format-post-format-chat .post-content p {
+						border-color: #dd0404;
+					}
+					    		body, input[type="text"], input[type="email"], input[type="tel"],
+		input[type="url"], input[type="password"], textarea,
+		input[type="submit"], #wp-calendar {
+        	font-family: Helvetica;
+        }
+
+        		.site-title,
+		h1, h2, h3,
+		h4, h5, h6,
+		.more-link,
+		.main-header #nav,
+		#comments .url,
+		.post-content blockquote:before {
+        	font-family: Verdana;
+        }
+    				.meta, .widget, .comment-date, .pagination, .mean-nav {
+        	font-family: Helvetica Neue;
+        }
+    
+	.main-wrap, body, input[type="text"], input[type="email"], input[type="tel"],input[type="url"], input[type="password"], textarea,input[type="submit"], #wp-calendar, h4 .by, h1 .by { font-size: 16px; font-size: 1.6rem; }
+	
+		@media screen and (max-width: 920px) {
+	h1, .main-archive h2 { font-size: 40px; font-size: 4rem; }
+	}
+	
+		@media screen and (max-width: 640px) {
+	h1, .main-archive h2 { font-size: 30px; font-size: 3rem; }
+	}
+			@media screen and (min-width: 920px) {
+		h1, .main-archive h2 { font-size: 40px; font-size: 4rem; }
+	}
+	
+						h5, #comments .url { font-size: 25px; font-size: 2.5rem; }
+		
+			.site-title { font-size: 42px; font-size: 4.2rem; }
+				.site-tagline { font-size: 24px; font-size: 2.4rem; }
+					
+		/* Text Transforms */
+	.meta, h1 .by, h4 .by {
+		text-transform: uppercase;
+	}
+	
+	
+			/* Font Weights */
+		h1, h2, h3,
+		h4, h5, h6,
+		.site-title,
+		.more-link,
+		.main-header #nav,
+		h5, #comments .url {
+			font-weight: 700;
+		}
+	
+			h1, .main-archive h2 {
+			letter-spacing: -3px;
+		}
+
+		h2, h3,
+		h4, h5, h6,
+		.site-title,
+		#comments .url {
+			letter-spacing: -1px;
+		}
+
+		.main-header #nav a {
+			letter-spacing: -0.5px;
+		}
+	
+
+
+        </style>
+    	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!-- BEGIN Typekit Fonts for WordPress -->
+
+<!-- END Typekit Fonts for WordPress -->
+
+			
+							<style id="tt-easy-google-font-styles" type="text/css">
+			
+																						p {
+													}
+								
+																										h1 {
+													}
+								
+																										h2 {
+													}
+								
+																										h3 {
+													}
+								
+																										h4 {
+													}
+								
+																										h5 {
+													}
+								
+																										h6 {
+													}
+								
+																										.main-wrap, body, input[type="text"], input[type="email"], input[type="tel"],input[type="url"], input[type="password"], textarea,input[type="submit"], #wp-calendar, h4 .by, h1 .by {
+							font-size: 13px; 						}
+								
+																										.site-title,h1, h2, h3,h4, h5, h6,.more-link,.main-header #nav,#comments .url,.post-content blockquote:before {
+							font-size: 27px; 						}
+								
+																										.meta, .widget, .comment-date, .pagination, .mean-nav {
+													}
+								
+										
+							</style>
+						</head>
+<body class="home blog  sidebar-on" id="top">
+
+
+
+
+<div class="main-wrap">
+
+<header class="main-header social-layout no-menu">
+	<div class="header-inner">
+
+		
+		
+	<div class="logo logo-left">
+
+							<a href="https://blogs.securiteam.com/" title="Go to Home"><img class="site-logo light retina" src="https://blogs.securiteam.com/wp-content/uploads/2015/07/Blue_BS_ST_banner.jpg" alt="Logo"  /></a>
+				
+				
+					
+						<div class="site-tagline">Thoughts about the world of security</div>
+
+
+						
+			</div><!-- /logo -->
+
+			
+
+		</div>
+</header>
+
+
+
+
+	
+<div class="content-wrap">
+	<section class="main main-archive">
+<div class="loop" id="content">
+
+
+<article class="post-2550 post type-post status-publish format-standard hentry category-securiteam-secure-disclosure" id="post-2550">
+
+	
+	<div class="inner">
+
+		<h2 class="post-title entry-title">
+
+							<a href="https://blogs.securiteam.com/index.php/archives/2550" title="SSD Advisory &#8211; ZendXml Multibyte Payloads XXE/XEE">
+							SSD Advisory &#8211; ZendXml Multibyte Payloads XXE/XEE							</a>
+					</h2>
+		
+			<ul class="meta top">
+		<li class="time">
+			<a href="https://blogs.securiteam.com/index.php/archives/2550" title="SSD Advisory &#8211; ZendXml Multibyte Payloads XXE/XEE"><time class="post-date updated" datetime="2015-08-12">August 12, 2015 </time></a> 		</li>
+		
+			<li class="comments post-tags">
+					<a href="https://blogs.securiteam.com/index.php/archives/2550#respond">0 Comments</a>				</li>
+
+				<li class="author-m post-tags">
+		By 		<span class="vcard author post-author"><span class="fn"><a href="https://blogs.securiteam.com/index.php/archives/author/noam" title="Posts by noam" rel="author">noam</a></span></span>
+	</li>
+
+	</ul>
+		<div class="post-content">
+	<p><strong>SecuriTeam Secure Disclosure</strong><br />
+SecuriTeam Secure Disclosure (<a href="http://www.beyondsecurity.com/ssd.html">SSD</a>) provides the support you need to turn your experience uncovering security vulnerabilities into a highly paid career. SSD was designed by researchers for researchers and will give you the fast response and great support you need to make top dollar for your discoveries.</p>
+<p><strong>Introduction</strong><br />
+<a href="https://github.com/zendframework/ZendXml" target="_blank">ZendXml</a> is a utility component for XML usage and best practices in PHP.</p>
+<p><strong>Vulnerability Details</strong><br />
+The XML standard defines a concept of an external entites. XXE (XML eXternal Entity) attack is an attack on an application that parses XML input from untrusted sources using incorrectly configured XML parser. The application may be forced to open arbitrary files and/or network resources. Exploiting XXE issues on PHP applications may also lead to denial of service or in some cases (for example, when an &#8216;expect&#8217; PHP module is installed) lead to  command execution.</p>
+<p>An independent security research of Zend Framework revealed that it is possible to bypass XXE security controls within the framework in case when the PHP application using Zend XML related classes (e.g Zend_XmlRpc_Server, Zend_Feed, Zend_Config_Xml etc.) from Zend Framework (including the latest version) is served via PHP FPM. Bypassing the controls may allow XXE attacks and lead to the aforementioned exploitation possibilities on systems where the XML parser is set to resolve entities.</p>
+<div class="more-link-wrap"> <a href="https://blogs.securiteam.com/index.php/archives/2550#more-2550" class="more-link">Read More</a></div>
+</div>
+		
+  
+  <ul class="meta bottom">
+
+    
+				<li class="cat post-tags"><a href="https://blogs.securiteam.com/index.php/archives/category/securiteam-secure-disclosure" rel="category tag">SecuriTeam Secure Disclosure</a></li>
+
+		
+    
+
+  </ul>
+
+
+<ul class="meta sharer">
+	<li class="share-on">
+		<a target="blank" title="SSD+Advisory+%26%238211%3B+ZendXml+Multibyte+Payloads+XXE%2FXEE" href="https://twitter.com/share?text=SSD+Advisory+%26%238211%3B+ZendXml+Multibyte+Payloads+XXE%2FXEE%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2550" onclick="window.open('https://twitter.com/share?text=SSD+Advisory+%26%238211%3B+ZendXml+Multibyte+Payloads+XXE%2FXEE%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2550','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class="twitter">
+		 <i class="fa fa-twitter-square"></i><span class="i">Twitter</span>
+		 </a>
+</li>
+<li class="share-on">
+		<a href="http://pinterest.com/pin/create/button/?url=https://blogs.securiteam.com/index.php/archives/2550&amp;media=&amp;description=SSD+Advisory+%26%238211%3B+ZendXml+Multibyte+Payloads+XXE%2FXEE" target="_blank" class=" pinterest offblack">
+			<i class="fa fa-pinterest-square"></i><span class="i">Pinterest</span>
+			</a>
+</li>
+<li class="share-on">
+		 <a target="blank" title="SSD+Advisory+%26%238211%3B+ZendXml+Multibyte+Payloads+XXE%2FXEE" href="http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2550" onclick="window.open('http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2550','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class=" facebook ">
+		 <i class="fa fa-facebook-square"></i><span class="i">Facebook</span>
+		 </a>
+</li>
+
+<li class="share-on">
+		  <a onclick="window.open('https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2550','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2550" class=" googleplus offblack">
+		   <i class="fa fa-google-plus-square"></i><span class="i">Google+</span>
+		   </a>
+</li>
+</ul>
+
+
+	</div>
+</article>
+
+
+
+
+
+<article class="post-2548 post type-post status-publish format-standard hentry category-securiteam-secure-disclosure" id="post-2548">
+
+	
+	<div class="inner">
+
+		<h2 class="post-title entry-title">
+
+							<a href="https://blogs.securiteam.com/index.php/archives/2548" title="SSD Adivsory &#8211; QNAP QTS  LDAP Authentication Remote Code Execution">
+							SSD Adivsory &#8211; QNAP QTS  LDAP Authentication Remote Code Execution							</a>
+					</h2>
+		
+			<ul class="meta top">
+		<li class="time">
+			<a href="https://blogs.securiteam.com/index.php/archives/2548" title="SSD Adivsory &#8211; QNAP QTS  LDAP Authentication Remote Code Execution"><time class="post-date updated" datetime="2015-08-12">August 12, 2015 </time></a> 		</li>
+		
+			<li class="comments post-tags">
+					<a href="https://blogs.securiteam.com/index.php/archives/2548#respond">0 Comments</a>				</li>
+
+				<li class="author-m post-tags">
+		By 		<span class="vcard author post-author"><span class="fn"><a href="https://blogs.securiteam.com/index.php/archives/author/noam" title="Posts by noam" rel="author">noam</a></span></span>
+	</li>
+
+	</ul>
+		<div class="post-content">
+	<p><strong>SecuriTeam Secure Disclosure</strong><br />
+SecuriTeam Secure Disclosure (<a href="http://www.beyondsecurity.com/ssd.html">SSD</a>) provides the support you need to turn your experience uncovering security vulnerabilities into a highly paid career. SSD was designed by researchers for researchers and will give you the fast response and great support you need to make top dollar for your discoveries.</p>
+<p><strong>Introduction</strong><br />
+Based on Linux, <a href="http://&lt;a href=" target="_blank">QNAP QTS 4</a> is a powerful operating system deployed on all QNAP Turbo NAS devices to bring performance and enhanced functionalities under an easy-to-use web GUI. QTS allows traditional NAS capabilities, in addition to advanced sharing features and mobile platforms support. Moreover, QTS supports custom applications to expand NAS functionalities for sharing and media streaming.</p>
+<p>On top of a traditional Linux kernel (3.4.6, x86 64), QTS 4 provides NAS capabilities implemented in user-land and a web-based UI built using cgi-bin technology. Although SSH access is available on all QNAP devices, it is possible to completely manage the device using the web interface.</p>
+<p>From the technical standpoint, QTS 4 web UI consists of two main components:<br />
+&nbsp;</p>
+<ul>
+<li>A web server thttpd and CGI binaries. In the default configuration, this service runs as ”admin”, a user with root permissions. On 80/tcp, the web server hosts a set of scripts to perform a redirect to port 8080/tcp. The service is also available over SSL (443/tcp) using Apache configured as a reverse-proxy, pointing to 8080/tcp. The webroot is located at /home/httpd.</li>
+</ul>
+<p></p><!-- Crayon Syntax Highlighter v2.7.1 -->
+
+		<div id="crayon-55d1fc5e3da53153917500" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style=" margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button" title="Toggle Line Numbers"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="Toggle Plain Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="Toggle Line Wrap"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="Expand Code"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="Copy"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly style="-moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4; font-size: 12px !important; line-height: 15px !important;">
+$ ps aux | grep thttpd
+
+5671 admin 3828 S /usr/local/sbin/Qthttpd -p 80 -nor -nos -u admin -d /home/Qhttpd -c **.*
+
+5716 admin 3916 S /usr/local/sbin/_thttpd_ -p 58080 -nor -nos -u admin -d /home/httpd -c **.* -h 127.0.0.1 -i /var/lock/._thttpd_.pid</textarea></div>
+			<div class="crayon-main" style="">
+				<table class="crayon-table">
+					<tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-55d1fc5e3da53153917500-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-55d1fc5e3da53153917500-2">2</div><div class="crayon-num" data-line="crayon-55d1fc5e3da53153917500-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-55d1fc5e3da53153917500-4">4</div><div class="crayon-num" data-line="crayon-55d1fc5e3da53153917500-5">5</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-55d1fc5e3da53153917500-1"><span class="crayon-sy">$</span><span class="crayon-h"> </span><span class="crayon-e">ps </span><span class="crayon-v">aux</span><span class="crayon-h"> </span><span class="crayon-o">|</span><span class="crayon-h"> </span><span class="crayon-e">grep </span><span class="crayon-i">thttpd</span></div><div class="crayon-line crayon-striped-line" id="crayon-55d1fc5e3da53153917500-2">&nbsp;</div><div class="crayon-line" id="crayon-55d1fc5e3da53153917500-3"><span class="crayon-cn">5671</span><span class="crayon-h"> </span><span class="crayon-i">admin</span><span class="crayon-h"> </span><span class="crayon-cn">3828</span><span class="crayon-h"> </span><span class="crayon-v">S</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">usr</span><span class="crayon-o">/</span><span class="crayon-v">local</span><span class="crayon-o">/</span><span class="crayon-v">sbin</span><span class="crayon-o">/</span><span class="crayon-v">Qthttpd</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">p</span><span class="crayon-h"> </span><span class="crayon-cn">80</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">nor</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">nos</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">u</span><span class="crayon-h"> </span><span class="crayon-v">admin</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">d</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">home</span><span class="crayon-o">/</span><span class="crayon-v">Qhttpd</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-e ">c *</span><span class="crayon-o">*</span><span class="crayon-sy">.</span><span class="crayon-o">*</span></div><div class="crayon-line crayon-striped-line" id="crayon-55d1fc5e3da53153917500-4">&nbsp;</div><div class="crayon-line" id="crayon-55d1fc5e3da53153917500-5"><span class="crayon-cn">5716</span><span class="crayon-h"> </span><span class="crayon-i">admin</span><span class="crayon-h"> </span><span class="crayon-cn">3916</span><span class="crayon-h"> </span><span class="crayon-v">S</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">usr</span><span class="crayon-o">/</span><span class="crayon-v">local</span><span class="crayon-o">/</span><span class="crayon-v">sbin</span><span class="crayon-o">/</span><span class="crayon-v">_thttpd_</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">p</span><span class="crayon-h"> </span><span class="crayon-cn">58080</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">nor</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">nos</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">u</span><span class="crayon-h"> </span><span class="crayon-v">admin</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">d</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-v">home</span><span class="crayon-o">/</span><span class="crayon-v">httpd</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-e ">c *</span><span class="crayon-o">*</span><span class="crayon-sy">.</span><span class="crayon-o">*</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-i">h</span><span class="crayon-h"> </span><span class="crayon-cn">127.0.0.1</span><span class="crayon-h"> </span><span class="crayon-o">-</span><span class="crayon-v">i</span><span class="crayon-h"> </span><span class="crayon-o">/</span><span class="crayon-t">var</span><span class="crayon-o">/</span><span class="crayon-v">lock</span><span class="crayon-o">/</span><span class="crayon-sy">.</span><span class="crayon-v">_thttpd_</span><span class="crayon-sy">.</span><span class="crayon-v">pid</span></div></div></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0026 seconds] -->
+<p>&nbsp;</p>
+<ul>
+<li>A set of custom binaries and standard Linux utilities (e.g. ldapsearch) that are invoked from the CGI scripts, to perform required tasks</li>
+</ul>
+<p>By default, the web interface is available from remote hosts with no network filtering.</p>
+<p><strong>Vulnerability Overview</strong><br />
+A code injection vulnerability has been discovered in the current version of QNAP QTS 4. As mentioned, this vulnerability affects all QNAP NAS products using LDAP authentication. Valid credentials are NOT required in order to exploit this issue, allowing a remote attacker to execute arbitrary system commands as root.</p>
+<div class="more-link-wrap"> <a href="https://blogs.securiteam.com/index.php/archives/2548#more-2548" class="more-link">Read More</a></div>
+</div>
+		
+  
+  <ul class="meta bottom">
+
+    
+				<li class="cat post-tags"><a href="https://blogs.securiteam.com/index.php/archives/category/securiteam-secure-disclosure" rel="category tag">SecuriTeam Secure Disclosure</a></li>
+
+		
+    
+
+  </ul>
+
+
+<ul class="meta sharer">
+	<li class="share-on">
+		<a target="blank" title="SSD+Adivsory+%26%238211%3B+QNAP+QTS++LDAP+Authentication+Remote+Code+Execution" href="https://twitter.com/share?text=SSD+Adivsory+%26%238211%3B+QNAP+QTS++LDAP+Authentication+Remote+Code+Execution%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2548" onclick="window.open('https://twitter.com/share?text=SSD+Adivsory+%26%238211%3B+QNAP+QTS++LDAP+Authentication+Remote+Code+Execution%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2548','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class="twitter">
+		 <i class="fa fa-twitter-square"></i><span class="i">Twitter</span>
+		 </a>
+</li>
+<li class="share-on">
+		<a href="http://pinterest.com/pin/create/button/?url=https://blogs.securiteam.com/index.php/archives/2548&amp;media=&amp;description=SSD+Adivsory+%26%238211%3B+QNAP+QTS++LDAP+Authentication+Remote+Code+Execution" target="_blank" class=" pinterest offblack">
+			<i class="fa fa-pinterest-square"></i><span class="i">Pinterest</span>
+			</a>
+</li>
+<li class="share-on">
+		 <a target="blank" title="SSD+Adivsory+%26%238211%3B+QNAP+QTS++LDAP+Authentication+Remote+Code+Execution" href="http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2548" onclick="window.open('http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2548','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class=" facebook ">
+		 <i class="fa fa-facebook-square"></i><span class="i">Facebook</span>
+		 </a>
+</li>
+
+<li class="share-on">
+		  <a onclick="window.open('https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2548','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2548" class=" googleplus offblack">
+		   <i class="fa fa-google-plus-square"></i><span class="i">Google+</span>
+		   </a>
+</li>
+</ul>
+
+
+	</div>
+</article>
+
+
+
+
+
+<article class="post-2545 post type-post status-publish format-standard hentry category-commentary" id="post-2545">
+
+	
+	<div class="inner">
+
+		<h2 class="post-title entry-title">
+
+							<a href="https://blogs.securiteam.com/index.php/archives/2545" title="Oracle CSO is right">
+							Oracle CSO is right							</a>
+					</h2>
+		
+			<ul class="meta top">
+		<li class="time">
+			<a href="https://blogs.securiteam.com/index.php/archives/2545" title="Oracle CSO is right"><time class="post-date updated" datetime="2015-08-11">August 11, 2015 </time></a> 		</li>
+		
+			<li class="comments post-tags">
+					<a href="https://blogs.securiteam.com/index.php/archives/2545#respond">0 Comments</a>				</li>
+
+				<li class="author-m post-tags">
+		By 		<span class="vcard author post-author"><span class="fn"><a href="https://blogs.securiteam.com/index.php/archives/author/dmitryc" title="Posts by dmitryc" rel="author">dmitryc</a></span></span>
+	</li>
+
+	</ul>
+		<div class="post-content">
+	<p>The internet (or at least twitter) is exploding regarding this, now deleted, post : <a href="https://web.archive.org/web/20150811052336/https://blogs.oracle.com/maryanndavidson/entry/no_you_really_can_t">Mary Ann Davidson blog post</a></p>
+<p>Let me start by saying that she is right. Yes, she&#8217;s right. Breaking the EULA is against the law.  You can&#8217;t argue about that. </p>
+<p>You can&#8217;t argue that they should be paying a bug bounty. You may *want* them to pay a bug bounty, but that is the companies decision. If they choose not to pay a bug bounty, that&#8217;s their prerogative.    </p>
+<p>As a consumer, you can choose to use their product (EULA and all) or not. That is something that you have control over.  </p>
+<p>As a researcher, you can choose to break the EULA or not. Arguing that someone should modify their EULA so that what you&#8217;re doing isn&#8217;t a violation is childish. </p>
+<p>I wish Oracle had stood by their CSO and left the blog online. I understand that they don&#8217;t want additional scrutiny on their product, but the scrutiny will be there irregardless (as it has been for many years now). Leaving the post online would have shown some &#8216;backbone&#8217;. If INFOSEC goes PC, it&#8217;s bad for us all. I&#8217;d rather someone tell me what they really think and we can go from there.  </p>
+<p>!Dmitry<br />
+dmitry.chan@gmail.com</p>
+</div>
+		
+  
+  <ul class="meta bottom">
+
+    
+				<li class="cat post-tags"><a href="https://blogs.securiteam.com/index.php/archives/category/commentary" rel="category tag">Commentary</a></li>
+
+		
+    
+
+  </ul>
+
+
+<ul class="meta sharer">
+	<li class="share-on">
+		<a target="blank" title="Oracle+CSO+is+right" href="https://twitter.com/share?text=Oracle+CSO+is+right%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2545" onclick="window.open('https://twitter.com/share?text=Oracle+CSO+is+right%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2545','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class="twitter">
+		 <i class="fa fa-twitter-square"></i><span class="i">Twitter</span>
+		 </a>
+</li>
+<li class="share-on">
+		<a href="http://pinterest.com/pin/create/button/?url=https://blogs.securiteam.com/index.php/archives/2545&amp;media=&amp;description=Oracle+CSO+is+right" target="_blank" class=" pinterest offblack">
+			<i class="fa fa-pinterest-square"></i><span class="i">Pinterest</span>
+			</a>
+</li>
+<li class="share-on">
+		 <a target="blank" title="Oracle+CSO+is+right" href="http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2545" onclick="window.open('http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2545','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class=" facebook ">
+		 <i class="fa fa-facebook-square"></i><span class="i">Facebook</span>
+		 </a>
+</li>
+
+<li class="share-on">
+		  <a onclick="window.open('https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2545','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2545" class=" googleplus offblack">
+		   <i class="fa fa-google-plus-square"></i><span class="i">Google+</span>
+		   </a>
+</li>
+</ul>
+
+
+	</div>
+</article>
+
+
+
+
+
+<article class="post-2541 post type-post status-publish format-standard hentry category-commentary" id="post-2541">
+
+	
+	<div class="inner">
+
+		<h2 class="post-title entry-title">
+
+							<a href="https://blogs.securiteam.com/index.php/archives/2541" title="Play some D!">
+							Play some D!							</a>
+					</h2>
+		
+			<ul class="meta top">
+		<li class="time">
+			<a href="https://blogs.securiteam.com/index.php/archives/2541" title="Play some D!"><time class="post-date updated" datetime="2015-08-04">August 4, 2015 </time></a> 		</li>
+		
+			<li class="comments post-tags">
+					<a href="https://blogs.securiteam.com/index.php/archives/2541#respond">0 Comments</a>				</li>
+
+				<li class="author-m post-tags">
+		By 		<span class="vcard author post-author"><span class="fn"><a href="https://blogs.securiteam.com/index.php/archives/author/dmitryc" title="Posts by dmitryc" rel="author">dmitryc</a></span></span>
+	</li>
+
+	</ul>
+		<div class="post-content">
+	<p>Hi there.  Long-time-no-blog <img src="https://blogs.securiteam.com/wp-includes/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>If you haven&#8217;t already, go read this:  <a href="https://t.co/d2hwhmzzuz">https://t.co/d2hwhmzzuz</a></p>
+<p>Note: this blog applies to Corporate networks. If you&#8217;re a coffee shop or a college, you&#8217;re on your own <img src="https://blogs.securiteam.com/wp-includes/images/smilies/simple-smile.png" alt=":)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>I&#8217;ve been a network defender for many years.  I currently work for a software company that builds network software which helps companies gain insight into how their network is being used and/or abused. I didn&#8217;t choose to go into network defense &#8211; it chose me. In 1997 at my first &#8220;real job&#8221; out of college, I was a part of a team that tracked down some hackers that were running around owning a bunch of Solaris servers.  From that day, I was hooked. </p>
+<p>Network defenders don&#8217;t get a lot of credit.  If you do your job right, no one ever talks about it.  If you do your job wrong, you&#8217;ll hear about it every day for the rest or your short-lived career. An attacker can be wrong a million times and only needs to be right once. That&#8217;s an advantage.  An attacker can spend 2 years in the bowels of one software app.  A defender cannot.  Accept this fact and move on&#8230;we can still win. The attacker has to use your network whilst evading detection. A lot of them don&#8217;t spend a lot of time figuring out how to do this right. They don&#8217;t have to be stealthy about exfiltrating data because it hasn&#8217;t mattered &#8211; the defense has been weak. How many recent infections used the darknet as a C&amp;C?&#8230;ummm, your network monitoring solution should be SCREAMING AT YOU if someone connects out via Tor or i2p.    </p>
+<p>The network is like a bodies immune system (though not nearly as complex). The job, if you&#8217;re up to it, is to be the immune system.  You can&#8217;t stop all infections from getting in.  In fact, it can be argued that infections must get in to build the immune system. Firewalls and other devices can block things that we have knowledge of; however, something that we haven&#8217;t previously encountered will eventually get in (maybe via email, hacked USB drive, 0-day, whatever). Our job is to detect the foreign body, eradicate it, and update the immune system such that that strain of virus can no longer get it. So, how can you do this?</p>
+<p>1) know what is &#8220;normal&#8221; for each host on your network.  What ports do they offer?  What ports do they connect to?  What do their traffic patterns look like for each port?  Who do they talk to?  Who talks to them?  what network protocols do they speak?  How long do sessions stay nailed up?  If you know this sort of stuff, then an attacker exfiltrating a gig of data cannot be hidden&#8230;it&#8217;ll stick out like a clown at an IBM business meeting.</p>
+<p>2) Method 1 will detect lateral movement, but if you employ dead space within your network, you can flag lateral movement with just a single packet.  Use honeynets, host-based IDS, traffic analysis (why is engineering dept trying to talk to HR?), etc. Spray your databases with bogus data that should never be accessed.  Put up fake file servers and watch for access or watermark the files and watch them if they move around the network. Be creative&#8230;make your network a hostile environment for those who would attack it. The locals know how to get around, the attacker will have to figure out how to move around the network.  Make this a painful process for him/her. </p>
+<p>3) Look for invalid use of standard ports.  Have you ever seen Skype find an &#8220;out door&#8221; on a network&#8230;What about vpn, i2p, p2p, Tor,etc.? Sending outbound traffic over well known ports is very, very common on most networks I have monitored. For each outbound port allowed through your firewall, you should flag on anomalous traffic over that port.  What is anomalous?  If the port is 80, only valid HTTP should flow over that port.  If the port is 443, only TLS/SSL should flow over that port. Find the people tunneling data or sessions out of your network and you have a short list of the folks to keep an eye on. </p>
+<p>4) Let the users know that you are watching.  If Mabel from Accounting comes in on Monday morning and uploads 2 gig of baby pictures to dropbox, you should go have a chat with her.  Get the word out.  User education is often overlooked&#8230;millions is spent on nifty software but you don&#8217;t even have a full time employee working on user education.  Sad. </p>
+<p>There&#8217;s a lot more that I could write, but network defense isn&#8217;t a &#8220;cookie cutter&#8221; operation. Each admin will have to be creative and come up with their own maze for the attackers to run. Good luck out there!</p>
+<p>!Dmitry<br />
+dmitry.chan@gmail.com </p>
+</div>
+		
+  
+  <ul class="meta bottom">
+
+    
+				<li class="cat post-tags"><a href="https://blogs.securiteam.com/index.php/archives/category/commentary" rel="category tag">Commentary</a></li>
+
+		
+    
+
+  </ul>
+
+
+<ul class="meta sharer">
+	<li class="share-on">
+		<a target="blank" title="Play+some+D%21" href="https://twitter.com/share?text=Play+some+D%21%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2541" onclick="window.open('https://twitter.com/share?text=Play+some+D%21%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2541','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class="twitter">
+		 <i class="fa fa-twitter-square"></i><span class="i">Twitter</span>
+		 </a>
+</li>
+<li class="share-on">
+		<a href="http://pinterest.com/pin/create/button/?url=https://blogs.securiteam.com/index.php/archives/2541&amp;media=&amp;description=Play+some+D%21" target="_blank" class=" pinterest offblack">
+			<i class="fa fa-pinterest-square"></i><span class="i">Pinterest</span>
+			</a>
+</li>
+<li class="share-on">
+		 <a target="blank" title="Play+some+D%21" href="http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2541" onclick="window.open('http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2541','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class=" facebook ">
+		 <i class="fa fa-facebook-square"></i><span class="i">Facebook</span>
+		 </a>
+</li>
+
+<li class="share-on">
+		  <a onclick="window.open('https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2541','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2541" class=" googleplus offblack">
+		   <i class="fa fa-google-plus-square"></i><span class="i">Google+</span>
+		   </a>
+</li>
+</ul>
+
+
+	</div>
+</article>
+
+
+
+
+
+<article class="post-2543 post type-post status-publish format-standard hentry category-securiteam-secure-disclosure" id="post-2543">
+
+	
+	<div class="inner">
+
+		<h2 class="post-title entry-title">
+
+							<a href="https://blogs.securiteam.com/index.php/archives/2543" title="SSD Advisory &#8211; Live555 Exploitable Buffer Overflow and Directory Traversal">
+							SSD Advisory &#8211; Live555 Exploitable Buffer Overflow and Directory Traversal							</a>
+					</h2>
+		
+			<ul class="meta top">
+		<li class="time">
+			<a href="https://blogs.securiteam.com/index.php/archives/2543" title="SSD Advisory &#8211; Live555 Exploitable Buffer Overflow and Directory Traversal"><time class="post-date updated" datetime="2015-08-03">August 3, 2015 </time></a> 		</li>
+		
+			<li class="comments post-tags">
+					<span>Comments Off<span class="screen-reader-text"> on SSD Advisory &#8211; Live555 Exploitable Buffer Overflow and Directory Traversal</span></span>				</li>
+
+				<li class="author-m post-tags">
+		By 		<span class="vcard author post-author"><span class="fn"><a href="https://blogs.securiteam.com/index.php/archives/author/noam" title="Posts by noam" rel="author">noam</a></span></span>
+	</li>
+
+	</ul>
+		<div class="post-content">
+	<p><strong>SecuriTeam Secure Disclosure</strong><br />
+SecuriTeam Secure Disclosure (<a href="http://www.beyondsecurity.com/ssd.html">SSD</a>) provides the support you need to turn your experience uncovering security vulnerabilities into a highly paid career. SSD was designed by researchers for researchers and will give you the fast response and great support you need to make top dollar for your discoveries.</p>
+<p><strong>Introduction</strong><br />
+<a href="http://www.live555.com/" target="_blank">Live555 Media Server</a> is &#8220;a complete RTSP server application&#8221;.</p>
+<p><strong>Vulnerability Details</strong><br />
+Two security vulnerabilities have been found in Live555. The first allows overflowing an internal buffer used by the program and the execution of arbitrary code the latter allows through directory traversal to gain insight to the operating system the Live555 is installed upon &#8211; which in allows more accurate exploitation of the first vulnerability with less &#8220;chance&#8221; of failure.</p>
+<div class="more-link-wrap"> <a href="https://blogs.securiteam.com/index.php/archives/2543#more-2543" class="more-link">Read More</a></div>
+</div>
+		
+  
+  <ul class="meta bottom">
+
+    
+				<li class="cat post-tags"><a href="https://blogs.securiteam.com/index.php/archives/category/securiteam-secure-disclosure" rel="category tag">SecuriTeam Secure Disclosure</a></li>
+
+		
+    
+
+  </ul>
+
+
+<ul class="meta sharer">
+	<li class="share-on">
+		<a target="blank" title="SSD+Advisory+%26%238211%3B+Live555+Exploitable+Buffer+Overflow+and+Directory+Traversal" href="https://twitter.com/share?text=SSD+Advisory+%26%238211%3B+Live555+Exploitable+Buffer+Overflow+and+Directory+Traversal%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2543" onclick="window.open('https://twitter.com/share?text=SSD+Advisory+%26%238211%3B+Live555+Exploitable+Buffer+Overflow+and+Directory+Traversal%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2543','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class="twitter">
+		 <i class="fa fa-twitter-square"></i><span class="i">Twitter</span>
+		 </a>
+</li>
+<li class="share-on">
+		<a href="http://pinterest.com/pin/create/button/?url=https://blogs.securiteam.com/index.php/archives/2543&amp;media=&amp;description=SSD+Advisory+%26%238211%3B+Live555+Exploitable+Buffer+Overflow+and+Directory+Traversal" target="_blank" class=" pinterest offblack">
+			<i class="fa fa-pinterest-square"></i><span class="i">Pinterest</span>
+			</a>
+</li>
+<li class="share-on">
+		 <a target="blank" title="SSD+Advisory+%26%238211%3B+Live555+Exploitable+Buffer+Overflow+and+Directory+Traversal" href="http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2543" onclick="window.open('http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2543','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class=" facebook ">
+		 <i class="fa fa-facebook-square"></i><span class="i">Facebook</span>
+		 </a>
+</li>
+
+<li class="share-on">
+		  <a onclick="window.open('https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2543','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2543" class=" googleplus offblack">
+		   <i class="fa fa-google-plus-square"></i><span class="i">Google+</span>
+		   </a>
+</li>
+</ul>
+
+
+	</div>
+</article>
+
+
+
+
+
+<article class="post-2534 post type-post status-publish format-standard hentry category-securiteam-secure-disclosure" id="post-2534">
+
+	
+	<div class="inner">
+
+		<h2 class="post-title entry-title">
+
+							<a href="https://blogs.securiteam.com/index.php/archives/2534" title="SSD Advisory &#8211; Axigen HTML Attachments Cross Site Scripting">
+							SSD Advisory &#8211; Axigen HTML Attachments Cross Site Scripting							</a>
+					</h2>
+		
+			<ul class="meta top">
+		<li class="time">
+			<a href="https://blogs.securiteam.com/index.php/archives/2534" title="SSD Advisory &#8211; Axigen HTML Attachments Cross Site Scripting"><time class="post-date updated" datetime="2015-07-26">July 26, 2015 </time></a> 		</li>
+		
+			<li class="comments post-tags">
+					<span>Comments Off<span class="screen-reader-text"> on SSD Advisory &#8211; Axigen HTML Attachments Cross Site Scripting</span></span>				</li>
+
+				<li class="author-m post-tags">
+		By 		<span class="vcard author post-author"><span class="fn"><a href="https://blogs.securiteam.com/index.php/archives/author/noam" title="Posts by noam" rel="author">noam</a></span></span>
+	</li>
+
+	</ul>
+		<div class="post-content">
+	<p><strong>SecuriTeam Secure Disclosure</strong><br />
+SecuriTeam Secure Disclosure (<a href="http://www.beyondsecurity.com/ssd.html">SSD</a>) provides the support you need to turn your experience uncovering security vulnerabilities into a highly paid career. SSD was designed by researchers for researchers and will give you the fast response and great support you need to make top dollar for your discoveries.</p>
+<p><strong>Introduction</strong><br />
+<a href="https://www.axigen.com/" target="_blank">Axigen</a> is a Linux mail server, calendaring and collaboration 100% private, highly available and scalable messaging solution.</p>
+<p><strong>Vulnerability Details</strong><br />
+The vulnerability is in the &#8220;actions.hsp&#8221; file that is responsible for visualizing certain attachments. The problem occurs because this file enables arbitrarily execution of JavaScript. Not only that, the application &#8220;by default&#8221; runs the attachment in the same domain so many other more complex attacks.</p>
+<div class="more-link-wrap"> <a href="https://blogs.securiteam.com/index.php/archives/2534#more-2534" class="more-link">Read More</a></div>
+</div>
+		
+  
+  <ul class="meta bottom">
+
+    
+				<li class="cat post-tags"><a href="https://blogs.securiteam.com/index.php/archives/category/securiteam-secure-disclosure" rel="category tag">SecuriTeam Secure Disclosure</a></li>
+
+		
+    
+
+  </ul>
+
+
+<ul class="meta sharer">
+	<li class="share-on">
+		<a target="blank" title="SSD+Advisory+%26%238211%3B+Axigen+HTML+Attachments+Cross+Site+Scripting" href="https://twitter.com/share?text=SSD+Advisory+%26%238211%3B+Axigen+HTML+Attachments+Cross+Site+Scripting%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2534" onclick="window.open('https://twitter.com/share?text=SSD+Advisory+%26%238211%3B+Axigen+HTML+Attachments+Cross+Site+Scripting%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2534','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class="twitter">
+		 <i class="fa fa-twitter-square"></i><span class="i">Twitter</span>
+		 </a>
+</li>
+<li class="share-on">
+		<a href="http://pinterest.com/pin/create/button/?url=https://blogs.securiteam.com/index.php/archives/2534&amp;media=&amp;description=SSD+Advisory+%26%238211%3B+Axigen+HTML+Attachments+Cross+Site+Scripting" target="_blank" class=" pinterest offblack">
+			<i class="fa fa-pinterest-square"></i><span class="i">Pinterest</span>
+			</a>
+</li>
+<li class="share-on">
+		 <a target="blank" title="SSD+Advisory+%26%238211%3B+Axigen+HTML+Attachments+Cross+Site+Scripting" href="http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2534" onclick="window.open('http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2534','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class=" facebook ">
+		 <i class="fa fa-facebook-square"></i><span class="i">Facebook</span>
+		 </a>
+</li>
+
+<li class="share-on">
+		  <a onclick="window.open('https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2534','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2534" class=" googleplus offblack">
+		   <i class="fa fa-google-plus-square"></i><span class="i">Google+</span>
+		   </a>
+</li>
+</ul>
+
+
+	</div>
+</article>
+
+
+
+
+
+<article class="post-2533 post type-post status-publish format-standard hentry category-securiteam-secure-disclosure" id="post-2533">
+
+	
+	<div class="inner">
+
+		<h2 class="post-title entry-title">
+
+							<a href="https://blogs.securiteam.com/index.php/archives/2533" title="SSD Advisory &#8211; ManageEngine Exchange Reporter Plus Auth Bypass / Arbitrary SQL Statement Execution">
+							SSD Advisory &#8211; ManageEngine Exchange Reporter Plus Auth Bypass / Arbitrary SQL Statement Execution							</a>
+					</h2>
+		
+			<ul class="meta top">
+		<li class="time">
+			<a href="https://blogs.securiteam.com/index.php/archives/2533" title="SSD Advisory &#8211; ManageEngine Exchange Reporter Plus Auth Bypass / Arbitrary SQL Statement Execution"><time class="post-date updated" datetime="2015-07-26">July 26, 2015 </time></a> 		</li>
+		
+			<li class="comments post-tags">
+					<span>Comments Off<span class="screen-reader-text"> on SSD Advisory &#8211; ManageEngine Exchange Reporter Plus Auth Bypass / Arbitrary SQL Statement Execution</span></span>				</li>
+
+				<li class="author-m post-tags">
+		By 		<span class="vcard author post-author"><span class="fn"><a href="https://blogs.securiteam.com/index.php/archives/author/noam" title="Posts by noam" rel="author">noam</a></span></span>
+	</li>
+
+	</ul>
+		<div class="post-content">
+	<p><strong>SecuriTeam Secure Disclosure</strong><br />
+SecuriTeam Secure Disclosure (<a href="http://www.beyondsecurity.com/ssd.html">SSD</a>) provides the support you need to turn your experience uncovering security vulnerabilities into a highly paid career. SSD was designed by researchers for researchers and will give you the fast response and great support you need to make top dollar for your discoveries.</p>
+<p><strong>Introduction</strong><br />
+<a href="https://www.manageengine.com/products/exchange-reports/" target="_blank">ManageEngine Exchange Reporter Plus</a> is a web-based analysis and reporting solution for Microsoft Exchange Servers. Exchange Reporter Plus is a comprehensive MS Exchange reporting software that provides over 100 different reports on every aspect of the Microsoft Exchange Server environment.</p>
+<p><strong>Vulnerability Details</strong><br />
+The ManageEngine Exchange Reporter product installs a JBoss server which listens on default port 8181 (tcp/http) for incoming requests. It offers an admin panel on that port.</p>
+<p>Without authorization/authentication it is possible to visit the RunQuery.jsp script to execute arbitrary PostgreSQL statements. When the EXECUTE parameter is set to &#8216;true&#8217;, it is possible to pass arbitrary SQL queries through the QUERY parameter (stacked queries are  allowed).</p>
+<div class="more-link-wrap"> <a href="https://blogs.securiteam.com/index.php/archives/2533#more-2533" class="more-link">Read More</a></div>
+</div>
+		
+  
+  <ul class="meta bottom">
+
+    
+				<li class="cat post-tags"><a href="https://blogs.securiteam.com/index.php/archives/category/securiteam-secure-disclosure" rel="category tag">SecuriTeam Secure Disclosure</a></li>
+
+		
+    
+
+  </ul>
+
+
+<ul class="meta sharer">
+	<li class="share-on">
+		<a target="blank" title="SSD+Advisory+%26%238211%3B+ManageEngine+Exchange+Reporter+Plus+Auth+Bypass+%2F+Arbitrary+SQL+Statement+Execution" href="https://twitter.com/share?text=SSD+Advisory+%26%238211%3B+ManageEngine+Exchange+Reporter+Plus+Auth+Bypass+%2F+Arbitrary+SQL+Statement+Execution%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2533" onclick="window.open('https://twitter.com/share?text=SSD+Advisory+%26%238211%3B+ManageEngine+Exchange+Reporter+Plus+Auth+Bypass+%2F+Arbitrary+SQL+Statement+Execution%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2533','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class="twitter">
+		 <i class="fa fa-twitter-square"></i><span class="i">Twitter</span>
+		 </a>
+</li>
+<li class="share-on">
+		<a href="http://pinterest.com/pin/create/button/?url=https://blogs.securiteam.com/index.php/archives/2533&amp;media=&amp;description=SSD+Advisory+%26%238211%3B+ManageEngine+Exchange+Reporter+Plus+Auth+Bypass+%2F+Arbitrary+SQL+Statement+Execution" target="_blank" class=" pinterest offblack">
+			<i class="fa fa-pinterest-square"></i><span class="i">Pinterest</span>
+			</a>
+</li>
+<li class="share-on">
+		 <a target="blank" title="SSD+Advisory+%26%238211%3B+ManageEngine+Exchange+Reporter+Plus+Auth+Bypass+%2F+Arbitrary+SQL+Statement+Execution" href="http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2533" onclick="window.open('http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2533','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class=" facebook ">
+		 <i class="fa fa-facebook-square"></i><span class="i">Facebook</span>
+		 </a>
+</li>
+
+<li class="share-on">
+		  <a onclick="window.open('https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2533','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2533" class=" googleplus offblack">
+		   <i class="fa fa-google-plus-square"></i><span class="i">Google+</span>
+		   </a>
+</li>
+</ul>
+
+
+	</div>
+</article>
+
+
+
+
+
+<article class="post-2530 post type-post status-publish format-standard hentry category-securiteam-secure-disclosure" id="post-2530">
+
+	
+	<div class="inner">
+
+		<h2 class="post-title entry-title">
+
+							<a href="https://blogs.securiteam.com/index.php/archives/2530" title="SSD Advisory &#8211; Internet Explorer 11 Rendering Engine DLL Hijacking">
+							SSD Advisory &#8211; Internet Explorer 11 Rendering Engine DLL Hijacking							</a>
+					</h2>
+		
+			<ul class="meta top">
+		<li class="time">
+			<a href="https://blogs.securiteam.com/index.php/archives/2530" title="SSD Advisory &#8211; Internet Explorer 11 Rendering Engine DLL Hijacking"><time class="post-date updated" datetime="2015-07-17">July 17, 2015 </time></a> 		</li>
+		
+			<li class="comments post-tags">
+					<span>Comments Off<span class="screen-reader-text"> on SSD Advisory &#8211; Internet Explorer 11 Rendering Engine DLL Hijacking</span></span>				</li>
+
+				<li class="author-m post-tags">
+		By 		<span class="vcard author post-author"><span class="fn"><a href="https://blogs.securiteam.com/index.php/archives/author/noam" title="Posts by noam" rel="author">noam</a></span></span>
+	</li>
+
+	</ul>
+		<div class="post-content">
+	<p><strong>SecuriTeam Secure Disclosure</strong><br />
+SecuriTeam Secure Disclosure (<a href="http://www.beyondsecurity.com/ssd.html">SSD</a>) provides the support you need to turn your experience uncovering security vulnerabilities into a highly paid career. SSD was designed by researchers for researchers and will give you the fast response and great support you need to make top dollar for your discoveries.</p>
+<p><strong>Introduction</strong><br />
+DLL Hijacking vulnerability is caused by specific insecure programming practices that allow so-called &#8220;binary planting&#8221; or &#8220;DLL preloading attacks&#8221;. These practices could allow an attacker to remotely execute arbitrary code in the context of the user running the vulnerable application when the user opens a file from an untrusted location.</p>
+<p>This issue is caused by applications passing an insufficiently qualified path when loading an external library. Microsoft has issued guidance to developers in the MSDN article, Dynamic-Link Library Security, on how to correctly use the available application programming interfaces to prevent this class of vulnerability. Microsoft is also actively reaching out to third-party vendors through the Microsoft Vulnerability Research Program to inform them of the mitigations available in the operating system. Microsoft is also actively investigating which of its own applications may be affected.</p>
+<p><strong>Vulnerability Details</strong><br />
+The Microsoft Internet Explorer 11 rendering engine on Windows 7 contains a remote DLL hijacking vulnerability which searches for a component that by default does not exist in the system. Although the search order is &#8220;safe&#8221;, the current directory is still included thus allowing for a DLL hijack vulnerability to exist. Several vectors exist since the IE rendering engine is used by a lot of third parties software. In this proof of concept we will use, HTML documents and SVG documents, it is also possible to use Word documents but we will not show how to do this in this advisory.</p>
+<div class="more-link-wrap"> <a href="https://blogs.securiteam.com/index.php/archives/2530#more-2530" class="more-link">Read More</a></div>
+</div>
+		
+  
+  <ul class="meta bottom">
+
+    
+				<li class="cat post-tags"><a href="https://blogs.securiteam.com/index.php/archives/category/securiteam-secure-disclosure" rel="category tag">SecuriTeam Secure Disclosure</a></li>
+
+		
+    
+
+  </ul>
+
+
+<ul class="meta sharer">
+	<li class="share-on">
+		<a target="blank" title="SSD+Advisory+%26%238211%3B+Internet+Explorer+11+Rendering+Engine+DLL+Hijacking" href="https://twitter.com/share?text=SSD+Advisory+%26%238211%3B+Internet+Explorer+11+Rendering+Engine+DLL+Hijacking%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2530" onclick="window.open('https://twitter.com/share?text=SSD+Advisory+%26%238211%3B+Internet+Explorer+11+Rendering+Engine+DLL+Hijacking%20-%20&amp;url=https://blogs.securiteam.com/index.php/archives/2530','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class="twitter">
+		 <i class="fa fa-twitter-square"></i><span class="i">Twitter</span>
+		 </a>
+</li>
+<li class="share-on">
+		<a href="http://pinterest.com/pin/create/button/?url=https://blogs.securiteam.com/index.php/archives/2530&amp;media=&amp;description=SSD+Advisory+%26%238211%3B+Internet+Explorer+11+Rendering+Engine+DLL+Hijacking" target="_blank" class=" pinterest offblack">
+			<i class="fa fa-pinterest-square"></i><span class="i">Pinterest</span>
+			</a>
+</li>
+<li class="share-on">
+		 <a target="blank" title="SSD+Advisory+%26%238211%3B+Internet+Explorer+11+Rendering+Engine+DLL+Hijacking" href="http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2530" onclick="window.open('http://www.facebook.com/share.php?u=https://blogs.securiteam.com/index.php/archives/2530','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" class=" facebook ">
+		 <i class="fa fa-facebook-square"></i><span class="i">Facebook</span>
+		 </a>
+</li>
+
+<li class="share-on">
+		  <a onclick="window.open('https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2530','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="https://plus.google.com/share?url=https://blogs.securiteam.com/index.php/archives/2530" class=" googleplus offblack">
+		   <i class="fa fa-google-plus-square"></i><span class="i">Google+</span>
+		   </a>
+</li>
+</ul>
+
+
+	</div>
+</article>
+
+
+
+
+
+
+	<nav class="pagination">
+		<ul>
+
+				<li class="older-posts next-last">
+				<span class="inactive"><i class="fa fa-long-arrow-left"></i> <span>Previous</span></span>
+			</li>
+			
+			<li class="newer-posts next-last">
+			<a href="https://blogs.securiteam.com/index.php/page/2" ><span>Next</span> <i class="fa fa-long-arrow-right"></i></a>		</li>
+		
+</ul>
+
+</nav>
+
+
+</div>
+</section>
+
+
+
+
+    <div class="sidebar" id="subnavigation">
+<div class="widget side">			<div class="textwidget"><div class="fb-like" data-href="http://blogs.securiteam.com" data-send="true" data-width="400" data-show-faces="true"></div></div>
+		</div><div class="widget side">			<div class="textwidget"><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script></div>
+		</div>		<div class="widget side">		<h4>Most recent posts</h4>		<ul>
+					<li>
+				<a href="https://blogs.securiteam.com/index.php/archives/2550">SSD Advisory &#8211; ZendXml Multibyte Payloads XXE/XEE</a>
+						</li>
+					<li>
+				<a href="https://blogs.securiteam.com/index.php/archives/2548">SSD Adivsory &#8211; QNAP QTS  LDAP Authentication Remote Code Execution</a>
+						</li>
+					<li>
+				<a href="https://blogs.securiteam.com/index.php/archives/2545">Oracle CSO is right</a>
+						</li>
+					<li>
+				<a href="https://blogs.securiteam.com/index.php/archives/2541">Play some D!</a>
+						</li>
+					<li>
+				<a href="https://blogs.securiteam.com/index.php/archives/2543">SSD Advisory &#8211; Live555 Exploitable Buffer Overflow and Directory Traversal</a>
+						</li>
+					<li>
+				<a href="https://blogs.securiteam.com/index.php/archives/2534">SSD Advisory &#8211; Axigen HTML Attachments Cross Site Scripting</a>
+						</li>
+					<li>
+				<a href="https://blogs.securiteam.com/index.php/archives/2533">SSD Advisory &#8211; ManageEngine Exchange Reporter Plus Auth Bypass / Arbitrary SQL Statement Execution</a>
+						</li>
+					<li>
+				<a href="https://blogs.securiteam.com/index.php/archives/2530">SSD Advisory &#8211; Internet Explorer 11 Rendering Engine DLL Hijacking</a>
+						</li>
+					<li>
+				<a href="https://blogs.securiteam.com/index.php/archives/2511">SSD Advisory &#8211; Oracle Endeca Workbench (CAS) Beanshell Script Remote Code Execution / Session Generation Authentication Bypass</a>
+						</li>
+					<li>
+				<a href="https://blogs.securiteam.com/index.php/archives/2508">SSD Advisory &#8211; Comtrol RTS Configuration Modification and Memory Corruption</a>
+						</li>
+				</ul>
+		</div><div class="widget side">			<div class="textwidget"><BR/><BR/><BR/><BR/><BR/><BR/><BR/></div>
+		</div><div class="widget side"><h4>Archives</h4>		<ul>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2015/08'>August 2015</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2015/07'>July 2015</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2015/06'>June 2015</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2015/05'>May 2015</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2015/01'>January 2015</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2014/08'>August 2014</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2014/06'>June 2014</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2014/05'>May 2014</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2014/04'>April 2014</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2014/03'>March 2014</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2014/02'>February 2014</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2014/01'>January 2014</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2013/12'>December 2013</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2013/11'>November 2013</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2013/10'>October 2013</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2013/09'>September 2013</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2013/08'>August 2013</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2013/07'>July 2013</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2013/06'>June 2013</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2013/05'>May 2013</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2013/04'>April 2013</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2013/03'>March 2013</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2013/02'>February 2013</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2013/01'>January 2013</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2012/12'>December 2012</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2012/11'>November 2012</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2012/10'>October 2012</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2012/09'>September 2012</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2012/08'>August 2012</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2012/07'>July 2012</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2012/06'>June 2012</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2012/05'>May 2012</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2012/04'>April 2012</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2012/03'>March 2012</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2012/02'>February 2012</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2012/01'>January 2012</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2011/12'>December 2011</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2011/11'>November 2011</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2011/10'>October 2011</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2011/09'>September 2011</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2011/08'>August 2011</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2011/07'>July 2011</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2011/06'>June 2011</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2011/05'>May 2011</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2011/04'>April 2011</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2011/03'>March 2011</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2011/02'>February 2011</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2011/01'>January 2011</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2010/12'>December 2010</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2010/11'>November 2010</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2010/10'>October 2010</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2010/09'>September 2010</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2010/08'>August 2010</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2010/07'>July 2010</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2010/06'>June 2010</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2010/05'>May 2010</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2010/04'>April 2010</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2010/03'>March 2010</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2010/02'>February 2010</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2010/01'>January 2010</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2009/12'>December 2009</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2009/11'>November 2009</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2009/10'>October 2009</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2009/09'>September 2009</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2009/08'>August 2009</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2009/07'>July 2009</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2009/06'>June 2009</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2009/05'>May 2009</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2009/04'>April 2009</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2009/03'>March 2009</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2009/02'>February 2009</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2009/01'>January 2009</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2008/12'>December 2008</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2008/11'>November 2008</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2008/10'>October 2008</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2008/09'>September 2008</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2008/08'>August 2008</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2008/07'>July 2008</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2008/06'>June 2008</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2008/05'>May 2008</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2008/04'>April 2008</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2008/03'>March 2008</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2008/02'>February 2008</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2008/01'>January 2008</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2007/12'>December 2007</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2007/11'>November 2007</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2007/10'>October 2007</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2007/09'>September 2007</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2007/08'>August 2007</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2007/07'>July 2007</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2007/06'>June 2007</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2007/05'>May 2007</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2007/04'>April 2007</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2007/03'>March 2007</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2007/02'>February 2007</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2007/01'>January 2007</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2006/12'>December 2006</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2006/11'>November 2006</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2006/10'>October 2006</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2006/09'>September 2006</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2006/08'>August 2006</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2006/07'>July 2006</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2006/06'>June 2006</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2006/05'>May 2006</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2006/04'>April 2006</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2006/03'>March 2006</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2006/02'>February 2006</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2006/01'>January 2006</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2005/12'>December 2005</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2005/11'>November 2005</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2005/10'>October 2005</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2005/09'>September 2005</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2005/08'>August 2005</a></li>
+	<li><a href='https://blogs.securiteam.com/index.php/archives/date/2005/07'>July 2005</a></li>
+		</ul>
+</div></div>
+
+</div><!-- /content-wrap -->
+
+
+
+
+
+
+<footer class="main-footer">
+  <div class="footer-wrap">
+
+  <div class="footer-left">&copy; 2015 Textual. Built by <a href="http://www.meanthemes.com" target="_blank">MeanThemes</a></div>
+
+      <div class="footer-right">
+
+      
+      
+      
+        <a href="#top" id="btt"><i class="fa fa-chevron-up"></i><span class="i">Top</span></a>
+
+      
+      </div>
+
+  </div>
+
+</footer>
+
+
+</div><!-- /wrap -->
+
+
+
+
+<script>
+
+  var ie9 = false;
+
+</script>
+<!--[if lte IE 9 ]>
+<script> var ie9 = true; </script>
+<![endif]-->
+
+<script>
+var mobilePosition = 'right';
+</script>
+
+<script type='text/javascript' src='https://blogs.securiteam.com/wp-content/plugins/pastacode/js/prism.js?ver=1.5.1'></script>
+<script type='text/javascript' src='https://blogs.securiteam.com/wp-content/plugins/pastacode/plugins/line-highlight/prism-line-highlight.min.js?ver=1.5.1'></script>
+<script type='text/javascript' src='https://blogs.securiteam.com/wp-content/themes/textual/assets/js/plugins/global-plugins.min.js?ver=1.0.2'></script>
+<script type='text/javascript' src='https://blogs.securiteam.com/wp-content/themes/textual/assets/js/scripts.min.js?ver=1.0.2'></script>
+<script type="text/javascript" id="slb_context">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-29522810-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
