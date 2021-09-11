@@ -1,0 +1,25 @@
+<html><body><h2>Eat your own dog food, or you’ll end up eating…</h2><br>January 3, 2006<br><br>
+
+There’s nothing worse than heading off into battle, singling out a crippled host, attacking, and getting thoroughly routed (errr, r00ted) in the process. How does that happen? Has it happened to you?
+<br><br>
+My informal (and incomplete) list of reach-around attacks:
+<br><br>
+1) reverse SPIKING - Named after Aitel’s popular SPIKE fuzzer, this sort of attack targets scanners. Set up a pseudo-service which returns non-standard data. How many scanners take the ‘Server:’ field and display the text string in a report? What if the ‘Server:’ field is a script? What if the ‘Server:’ field is 4097 bytes long? What if the scanner stores the return data in a database and the return data contains specially formatted SQL syntax? Does the scanner cap off their receive buffer? You get the idea. Are these types of attacks popular? No. Are they low-hanging fruit for the security researcher? You bet.
+<br><br>
+2) Passive device content-parsing flaws - Pretty well documented already. This sort of attack targets network devices which listen for traffic not destined for them. Just send malformed data or packet headers on the wire and watch the IDS/sniffer/router/whatever choke. Snort, ISS, and Ethereal have, in the past, been targets of this sort of attack.
+<br><br>
+3) Reverse trophy hunting - This attack targets the *individual* who comes back after a successful scan in order to gather trophies (screen shots, deposit a file, etc.). Start with a pseudo service (SSH, telnet, FTP, etc.) with an easily guessed or NULL passwd. The scanner finds the vulnerability and the individual running the scanner comes back to grab their trophy. However, the service isn’t real and aims to exploit the SSH|telnet|ftp|whatever client when it attempts anything more than a log-in. Did the individual come back with an old version of wget in order to grab a screen shot of a vulnerable web app? Did the individual just download and run your ActiveX component because they thought they were logging into a browser-based terminal services session? Did the individual use a vulnerable SMTP client in order to test the open relay that the scanner found? Etc! You get the idea.
+<br><br>
+4) Sourceforgeish Trojan - This attack targets both security professionals as well as ne’er-do-wells (to a lesser extent). Set up a project on some website. The software contains a Trojan. Now, wait a few weeks and publish a flaw in the software. Wait for all the security researchers to come and download the software so that they can generate signatures for their IDS, exploit code for their auto-rooters, checks for their scanners, etc. Ouch.
+<br><br>
+5) Google hacking hack - This sort of attack also targets both security professionals and ne’er-do-wells. So, the Security team ran their new google-hacking tool and just found a ‘password.xls’ spreadsheet on your website via a google query. Now, they’re closing in for the kill…except, the xls they just downloaded and are gleefully opening has a Trojan/buffer overflow/malicious macro/whatever. Reversal. 2 points.
+<br><br>
+6) Fools gold - This sort of attack targets the file voyeur. Just set up your nfs/smb/ftp/web/whatever file share with insecure permissions. On the share you might have something like a modified version of some popular executable (i.e. executable + Trojan), a malicious office file, a media file which overflows the pen-testers version of Media Player, etc. Build it and they *will* come.
+<br><br>
+I find 4 - 6 very interesting. You see, the files that the security team *rushes* to open are files that they would never even think about opening if you sent it to them. If you sent them an executable, they would run it in a sandbox after running 10 different virus scanners against it, reverse it, throw it on vmware and sniff every packet leaving the machine, etc. Yet, if they *find* the file, they’ll often open it without a second thought. Somehow, the thrill of the chase and the impending kill temporarily blind them. They are so intent on the hack that they don’t even notice the *hack*. Or, maybe it’s the fact that the target appears so weak and they think themselves so strong? I don’t know why these work so well, but they do. Don’t believe me? Set up an insecure share and crank up your machine at the next security conference.
+<br><br>
+Is there a point to all this? Sure. Audit your tools to ensure that they resist these sort of attacks, ensure that your processes address any possible shortcomings in your pen-test. And, lastly, check that ego at the door.
+<br><br>
+!Dmitry
+</body>
+</html>

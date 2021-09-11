@@ -1,0 +1,57 @@
+<html><body><h2>SINFP, TCP Options, and tool redux</h2><br>June 22nd, 2006<br><br>
+
+SinFP is the shiznet. Why?<br><br>
+0) map out open firewall ports to backend hosts. This is very nice.<br>
+1) only single open port required (how many times do you actually get CLOSED and OPEN ports in a pen-test against a hardened server….uh, never.<br>
+2) fast (3 packets)<br>
+3) relatively stealthy (how many IDS engines are flagging on valid SYN packets with valid options)<br><br>
+
+IMO, there are 2 major players in the OS fingerprinting space. Namely, nmap and xprobe2. I’m not gonna waste your time running tests against tons of different boxes. Let’s just run the 3 tools against my win2k3 SP1 server which is running without any firewalls (for the benefit of this test)…
+<br><br>
+First up, we have the incumbent champion nmap. Nmap steps up to the plate…there’s the pitch…the swing…<br>
+OS details: Microsoft Windows .NET Enterprise Server (build 3604-3790)
+<br><br>
+Ouch. Swing and miss. Nmap is batting .000
+<br><br>
+Next up is xprobe2. The swing, swing, swing, swing, swing, …, swing<br>
+[+] Host 10.10.10.8 Running OS: “Microsoft Windows 2003 Server Standard Edition” (Guess probability: 100%)<br>
+[+] Other guesses:<br>
+[+] Host 10.10.10.8 Running OS: “Microsoft Windows XP SP2” (Guess probability: 100%)<br>
+[+] Host 10.10.10.8 Running OS: “Microsoft Windows 2003 Server Enterprise Edition” (Guess probability: 100%)<br>
+[+] Host 10.10.10.8 Running OS: “Microsoft Windows 2000 Workstation SP2” (Guess probability: 100%)<br>
+[+] Host 10.10.10.8 Running OS: “Microsoft Windows 2000 Server Service Pack 1” (Guess probability: 100%)<br>
+[+] Host 10.10.10.8 Running OS: “Microsoft Windows 2000 Server Service Pack 4” (Guess probability: 100%)<br>
+[+] Host 10.10.10.8 Running OS: “Microsoft Windows NT 4 Workstation” (Guess probability: 100%)<br>
+[+] Host 10.10.10.8 Running OS: “Microsoft Windows NT 4 Workstation Service Pack 4” (Guess probability: 100%)<br>
+[+] Host 10.10.10.8 Running OS: “Microsoft Windows NT 4 Server Service Pack 1” (Guess probability: 100%)<br>
+[+] Host 10.10.10.8 Running OS: “Microsoft Windows NT 4 Server Service Pack 5” (Guess probability: 100%)<br><br>
+
+That’s just ugly. 10 swings and one foul tip. Xprobe2 is batting .050.
+<br><br>
+Next up is the relative newcomer, SinFP. Here comes the pitch…the swing:<br>
+IPv4: HEURISTIC0/P1P2P3: Windows: Microsoft: Windows: 2000<br>
+IPv4: HEURISTIC0/P1P2P3: Windows: Microsoft: Windows: 2003 (SP1)<br><br>
+
+SinFP bats .500.
+<br><br>
+Playing with sinfp made me curious (again) about how devices handle bogus options data. It had been a few years so I wrote a quick script that ran 7 elementary tests:
+<br><br>
+0) Options section is limited to 40 bytes…Let’s go past that boundary.<br>
+1) Options are of format [Kind][LEN][values]. Give a bogus LEN byte<br>
+2) Insert arbitrary EOL<br>
+3) Fiddle around with the reserved KINDS (27-255)<br>
+4) Runts with bogus TCP offset<br>
+5) Giants with bogus TCP offset<br>
+6) replay options (i.e. keep repeating the same KIND,LEN,VALUE until we get close to 40)<br><br>
+
+While testing, I segfaulted a very, very popular open source IDS package. I leave the exact option packet and the buggy software as an exercise to the astute reader 😉
+<br><br>
+Other ‘devices’ have similar difficulties.
+<br><br>
+Fyodor’s top (50 * 2) is out. Is it just me, or has not much changed over the years?
+<br><br>
+Peace be unto Ye
+<br><br>
+!Dmitry
+</body>
+</html>

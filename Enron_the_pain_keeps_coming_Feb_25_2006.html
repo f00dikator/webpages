@@ -1,0 +1,68 @@
+<html><body><h2>Enron - The Pain Keeps coming</h2><br>Feb 25th, 2006<br><br>
+
+Note: I posted this to slashdot along with proof of the Private data. It has not yet been approved.<br><br>
+
+A year (or more) ago, a large batch of Enron emails were released to the public. This data set has been very useful from a ‘Research’ perspective. Just this weekend, I was using it to test the speed of PCRE vs Python vs Perl…until I happened upon a little nugget of information which led me to look at the dataset from a Security/Privacy perspective.
+<br><br>
+It appears as if data is included within these emails which violates individual Privacy. The data includes, but is not limited to, Account information to non-Enron applications (FTP login credentials, web credentials, etc.), Parent-teacher school data, private residence addresses, private residence phone numbers, Names and Social Security Numbers, and more.
+<br><br>
+Where did the Enron emails come from? The United States Federal Energy Regulatory Commission. That’s sad.
+<br><br>
+Some examples (I stripped out the SSN or Credit Card number with X’s, and changed the name/address):
+<br><br>
+A Social Security Number
+<br><br><pre>
+To: Patti Thompson/HOU/ECT@ECT
+cc: Sally Beck/HOU/ECT@ECT, Shelly Jones/HOU/ECT@ECT
+Subject: Summer Intern Information
+
+Patti:
+
+The following intern will be in Sally’s department this summer:
+
+Name Start Date SS#
+
+Jane Doe May 22, 2000 XXX-XX-XXXX
+
+Please let me know the CO# and Cost Center#.
+
+If you have any questions, I can be reached at x35850.
+
+Thank you.
+
+-sap
+</pre><br><br><pre>
+Another Social Security Number
+
+From: christina.valdez@enron.com
+Subject: Tom Hopwood
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Badge #15518 - SS # XXX-XX-XXXX
+</pre><br><br><pre>
+A Credit Card purchase
+
+Date: Thu, 10 May 2001 08:07:00 -0700 (PDT)
+From: john.arnold@enron.com
+To: ticketwarehouse@aol.com
+Subject: Re: eBay End of Auction - Item # 1236142249
+Mime-Version: 1.0^
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+199.99+ $18 o/n shipping = 217.99
+
+Visa 4128 XXXX XXXX XXXX exp X/XX
+
+shipping and billing address :
+John Arnold
+XXXX XXXX XX
+Houston, TX 77002
+XXX-XXX-XXXX
+</pre><br><br>
+
+!Dmitry
+</body>
+</html>

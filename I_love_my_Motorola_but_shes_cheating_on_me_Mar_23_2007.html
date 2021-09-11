@@ -1,0 +1,36 @@
+<html><body><h2>I love my Motorola but I think she's cheating on me</h2><br>March 23rd, 2007<br><br>
+
+
+So, I got a new Motorola Q Smartphone. And, of course, the first thing anyone does when they get a new networked device is scan the sucker. I don’t expect any ports to be open (besides the synching ports), so I go for the UDP ports first. The stack on the Motorola is UDP-scanning friendly and I get:<br><br>
+
+42/udp open|filtered nameserveri<br>
+67/udp open|filtered dhcps<br>
+68/udp open|filtered dhcpc<br>
+135/udp open|filtered msrpc<br>
+136/udp open|filtered profile<br>
+137/udp open|filtered netbios-ns<br>
+138/udp open|filtered netbios-dgm<br>
+139/udp open|filtered netbios-ssn<br>
+445/udp open|filtered microsoft-ds<br>
+520/udp open|filtered route<br>
+1034/udp open|filtered activesync-notify<br>
+1434/udp open|filtered ms-sql-m<br>
+2948/udp open|filtered wap-push<br><br>
+
+Interesting. Now, I just need to generate some test cases and I can start fuzzing those services. I now scan to see what’s open on the TCP side. I honestly don’t expect anything. I start with ports 1-10000. And….port 8000 is open????? That’s a wierd port to be open, so I telnet in to the port, and I get a 4-byte packet of \x00\x00\x00\x69 followed by a packet with the following strings:
+<br><br>
+“””<br>
+Motorola Test Command#11000<br>
+Motorola MCU Data Logger#11006<br>
+Motorola DSP Logger#11007<br>
+QC Interface#11008<br>
+“””
+<br><br>
+Hmmmm, another bit of interesting news. And those strings (minus the pound digits) return no info via Google. Further, what are those #[DIGIT] things. And, what sort of logging is being done? For kicks, I tell nmap to scan ports 11,000-11008 on both TCP and UDP. All the UDP ports are dead…but, port 11008/TCP is open. Nice. I now scan all ports through 65535 and I note that port 13000 is also open. So, to recap. I have 13 UDP ports to fuzz and 3 TCP ports to fuzz. I don’t hold much hope for port 8000. It appears to be a poor man’s rpc or something…telling me where other services might be living. Connect to port 8000 and it just dumps it’s data and immediately FINs. 11008 and 13000 don’t respond to the nudging that I’ve been sending down the pipe thus far. I’ve got a little homemade program that I’m running (a stupid little program) which just generates rand() bytes of rand() composition and sends it down the line and waits 6 seconds for a response. Once I can get a single response, I can just run permutations of the successful-response packet in hopes of a second response, ad infinitum….blackbox testing at it’s worst. So, now I’m out of the loop and just waiting for my program to find something and send me an email. I think I’ve hit refresh on my email client 75 times this morning. I’m too impatient to be a decent fuzzer guy. It’s been running for 11 hours! I should have some data by now! … Somewhere in cyberspace, Johnny Disco is laughing at me.
+<br><br>
+What would be nice (hint hint) would be a pointer to some protocol specs 😉 In case anyone has forgotten, my email address is dmitry.chan@gmail.com
+<br><br>
+!Dmitry
+
+</body>
+</html>

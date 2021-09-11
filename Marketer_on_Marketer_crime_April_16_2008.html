@@ -1,0 +1,22 @@
+<html><body><h2>Marketer on Marketer Crime</h2><br>April 16th, 2008<br><br>
+
+				<p>I have a strong distrust of most marketing and sales individuals.  I hate evaluating software and getting a dozen calls or emails from some overzealous, inside-sales weenie.  For this reason, I usually use bogus information when I fill out the obligatory form requesting the software that I want to play with.  Lately, a lot more companies have been ignoring my queries for eval software.  While I&#8217;m pleased to not be receiving calls or emails, I would appreciate the actual software.  Today, while waiting (not too patiently) for my link to come through, I went through the email looking for some clue as to why I wasn&#8217;t selected to play with their software.  In the HTML, I note a line like this (obfuscated somewhat and using &#8216;(&#8217; and &#8216;)&#8217; instead of angle brackets).</p>
+<p>(IMG xsrc=&#8221;http://somelargesoftwarecompany.com/mk/auth?_ED=abcdefghijklmnopqrstuv</p>
+<p>&amp;_esniff=true&#8221;  HEIGHT=&#8221;1&#8243; WIDTH=&#8221;1&#8243;)</p>
+<p>What&#8217;s that?  Why is HEIGHT and WIDTH equal to 1?  How will I ever see that?</p>
+<p>So, the natural next question is: What happens when the web browser (or email client) requests that image.  Well, it turns out it&#8217;s not a real image.  It&#8217;s size is 0 bytes and the error code is &#8220;204 NoContent&#8221;.</p>
+<p>I add a single quote to the abcdefghijklmnopqrstuv string.  Now, I&#8217;m getting an error message like:</p>
+<p>&#8220;MarketFirst encountered an error while processing your request.&#8221;</p>
+<p>So, what&#8217;s the deal with that little, bitty image?  Well, it turns out that I&#8217;m not supposed to see that little, bitty image.  That little snippet is part of a marketing software (MarketFirst) which tracks when and where the email is opened (ooooh, I am *so* hating marketing guys right now).</p>
+<p>To see other companies using the marketfirst software, google:<br />
+MarketFirst error inurl:&#8221;/mk/&#8221;</p>
+<p>Even more fun, google:<br />
+MarketFirst inurl:&#8221;/mk/&#8221; ODBC error</p>
+<p>Wanna try it yourself.  Check out:<br />
+<a href="http://cdcsoftware-marketing.com/mk/get/ca_m1_online_demo_registration?MP=M1COM_HOMEPAGE">http://cdcsoftware-marketing.com/mk/get/ca_m1_online_demo_registration?MP=M1COM_HOMEPAGE</a></p>
+<p>You&#8217;ll even get your own email which tracks back to their database&#8230;call it marketer on marketer crime.</p>
+<p>Now, if I could just get a MarketFirst demo evaluation ;)  </p>
+<p>!Dmitry</p>
+
+</body>
+</html>

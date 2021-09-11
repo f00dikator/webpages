@@ -1,0 +1,22 @@
+<html><body><h2>Using time travel to detect vulnerabilities on web servers</h2><br>July 14, 2006<br><br>
+
+
+If I’m testing a web application for a company, there are some bits of information that I’m willing to pay for<br><br>
+
+1) I want to know all old apps which used to reside on a server but now are no longer *linked to* via that server. e.g. Did bigcompany.com have an old cgi-bin application called process_orders.pl which handled credit card info? Is that cgi-bin application no longer linked to anywhere on bigcompany.com? I want to know that so I can check for the existence of that app (sorry, but web developers err on the side of laziness…they’ll remove the link but they will often leave the app sitting in it’s original location). WayBack machine has this information. Google often has this information. Someone needs to package it up and sell it. Then, I can feed this information to my tool that looks for filename, filename.backup, filename.orig, filename.bak, etc.
+
+<br><br>
+2) I want to know when web forms changed input parameters but still post to the same backend processing script. It should be obvious why I want this, but I’ll belabour the point for a minute. Developers never delete code ;-) , instead they just write a new class or function and call that class or function. Knowing old inputs can put the pen-tester into a position where they can take old functions or classes for a spin.
+<br><br>
+3) Cookie format changes. Similar to 2, just use old cookies instead of old POSTS. Did an old cookie have string ‘TEMPUSER=BOB’ but newer cookies have ‘TEMPUSER=NULL’….hmmm.
+<br><br>
+4) Patch history of the server. I can get some of this from Netcraft.
+<br><br>
+5) All of the google-hacking, GHDB stuff run and packaged up for me. I have 7 Google API keys. That gives me 7,000 queries per day. It’s not enough. I really don’t want to bother with it and would pay for the nicely-formatted results. I wrote a python program to run the queries directly via a google web engine. However, google easily caught my lame attempts and warned me that my usage was inappropriate. Yes, I could write a tool that used full headers (like a browser), re-used cookies, slept for a rand() amount of time between queries (like a user would), etc. etc. But, that’s a pain and I’d rather just pay for it.
+<br><br>
+Lastly, and completely unrelated to all the stuff above, if you’re writing a web scanner that spiders and indexes site links, please do a full protocol analysis. Too many web scanners do line-by-line, regex-based analysis. So, if an HTML comments starts on line 3, there is a href link on line 5, and then the comment span ends on line 7, the stupid scanner peruses that link as if it was a normal link and never reports (as it should) that there was a *commented out* link (of much more importance, imo).
+<br><br>
+!Dmitry
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html><body><h2>SWAAT tool released</h2><br>Sep 10th, 2006<br><br>
+
+The guys and gals from Security Compass (http://www.securitycompass.com/) released a source-code auditing tool. I wish they released the source for their engine, but they didn’t. The meat of the checks are in the .xml files. I went looking into these xml files to see what they were looking for. Also, I also ran the engine against a source tree that I had previously audited with my homemade parser. Some observations.
+<br><br>
+1) They don’t audit C, C#, C++. This is a major drawback. Big companies write the core of their apps in some version of C. I can’t believe that Nish doesn’t automate part of the audit against C*. Is the free version of SWAAT some stub version which is being used to solicit new plugins from open-source developers? Nah, that kind of stuff never happens.
+<br><br>
+2) They don’t address the majority of variable casting and conversion functions. Tons of bugs are introduced when one variable type gets thrown into another variable type. They do look for stuff like base64 conversion routines and other similar (common) functions. This is good.
+<br><br>
+3) In line with (2), I’d like to see where there is no error catching. If a 32-bit integer gets cast down to a 16-bit integer and there is no error catching, that is something that I want to know.
+<br><br>
+4) They find user-supplied input. However, they don’t track the variable through the source file and see what happens to it. If there is a sql ‘SELECT’ statement that has a user-supplied variable that was never parsed and cleansed, then I need to know that.
+<br><br>
+5) They don’t find bad regex or even where regex is occurring within the source. That is low-hanging fruit. You gotta find that stuff.
+<br><br>
+6) They don’t parse .config files in .NET directories. Do you know how much good stuff you find in the .config files? You gotta find this stuff.
+<br><br>
+7) Error reporting directives (within source and config files) is only minimally addressed. What happens, for example, if a developer has disabled certain warning codes or done something like ‘On Error Continue’. These are things that I must know about if I’m doing a code audit. I’m also interested in logging functions and the like. SWAAT doesn’t give me this info except in 3 specific instances (2 SQL errors and the detection of the string ‘Exception’).
+<br><br>
+8) SWAAT looks for Server variable settings via ‘Request.ServerVariables’ strings. They should have done it more generically by looking at the ENV values by name and not by request method. This would allow the check to match across multiple development platforms and not just ASP.
+<br><br>
+9) Uncleansed user-supplied variables should be reported on. I don’t see this in SWAAT. For example, what if ValidateRequest is set to FALSE?
+<br><br>
+10) SWAAT looks at input variables and output variables. But, they don’t have logic to tie together the two matches. For example (in ASP), if I see a call to Response.Write, that’s mildly interesting. If I see a call to Response.Write which passes in a Request.* variable and that Request.* variable hasn’t been sanitized, that HORRIBLY interesting. I need to know about that. *Any* time a user-supplied variable is left unsanitized and that variable is used in any output (even printing out of a ‘a href’ tag), I need to know.
+<br><br>
+11) There were tons of false positives due to sloppy regex within the SWAAT .xml files. Example: match=”.*(rand|srand).*” and match=”.*select .* from .*”. There is also no differentiation between a sql statement which uses user-supplied variables (HIGH RISK) and ones that use strictly hard-coded strings (at best, LOW RISK). There are tons of more examples, but I don’t have a lot of time.
+<br><br>
+12) Noted that they parse for a ‘CDONTS’ string. I did not realize that this was used by developers to send email. I added this into my source-code parser ;)
+<br><br>
+13) There is a ton of stuff that’s included in _19 Deadly Sins of Software Security_ but is not to be found in SWAAT. I don’t have time to enumerate all these items…but, it’d be nice to see these in SWAAT.
+<br><br>
+14) It doesn’t run on *nix. I ran the tool on my Windows machine and the first thing I got was a run-time error. I’m a security guy, I shouldn’t have run the freaking executable to begin with. Curiosity killed the cat.
+<br><br>
+At the end of the day, it’s great to see a tool that does source-code auditing. I just wish it was a little more intelligent than just a string parser. I also wish they distributed source to their engine. If they had released this in May, I probably wouldn’t have written my own tool and would have just extended and fixed their xml checks. As it stands, it’s easier for me to hork a few things from their product than to add all my stuff into their product. Isn’t there a saying in open-source that you should release early and often? If not, it should be a saying :)
+<br><br>
+0×0A Peace be unto Ye vbCRLF
+<br><br>
+!Dmitry
+dmitry.chan@gmail.com
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html><body><h2>What I did over my summer vacation</h2><br>September 6, 2006<br><br>
+
+
+When I was a kid, my first day back from summer vacation was usually spent writing a “What I did over my summer vacation” essay. I don’t get summer vacations any more. I do, however, have kids who get summer vacations. So, every summer I pick up some side gigs in order to fund the array of camps, Disney, new clothes, vacations, etc.
+<br><br>
+My summer vacation was spent … (hold on - it’s coming) … auditing source code (it’s like a punch to the gut, isn’t it?). All kinds of source code: PHP, ASP, C, C++, C#, java, javascript, and more. And, after the first few nights of this torture, I hit the ‘Easy’ button and wrote a source-code parser to look for low-hanging fruit. The rest of the audit was spent weeding out false positives, tweaking my little parser, and patting myself on the back for succeeding in my natural bent toward laziness. I also read some books which fed my project with neat new things to look for. I’ll pimp the books first:
+<br><br>
+1) 19 Deadly Sins of Software Security - This book is, to code auditors, what “Shellcoders handbook” is to pen-testers. An awesome book. If you don’t have it, go get it.
+<br><br>
+2) Writing Secure Code - Technically, this book is a subset of (1). However, this book went into the entire Lifecycle of maintaining secure code. It’s not a “must read” for the code auditor guy (the guy who actually has to *read* the code). It is a “must read” for those who manage developers and, hence, code.
+<br><br>
+My parser ended up with around 75 checks. Of these checks, several stood out (and, by “stood out”, I mean “detected tons, and tons of actual flaws in the software”). So, what were the especially problematic items?
+<br><br>
+1) Bad input parsing of user-supplied form data. All 3 companies that I consulted for this summer had this exact same problem. They did just enough server-side parsing to pass their PCI audit or fly under the radar of Appscan, webinspect, and Nessus (parse out single quotes, HTML tags, etc.)…but, if you scratched the surface, the bugs were easy to find. Just look for variable assignments from a form (foo = Request.Form(”foo”) ) and then track that variable through the source file. In 9 out of 10 instances, the variable went through some cursory parsing and was then used in a SQL query, logging function, passback to the client, etc. On a related note, it’s sad to note that many developers are still struggling with writing a decent regex statement. If I had a dime for everytime some developer used a regex like “[0-9]{5}” for a zipcode field, I’d be a rich man. You can find a wealth of bugs just by grepping out the calls to regex within the code.
+<br><br>
+2) Bad input parsing of browser-supplied header data. Just look for ENV variables being acted upon. What are they doing with that HTTP Referer field, COOKIE, User-Agent, request method, etc. If you’re doing a blind application test, the best time to check for these type of bugs is during Error conditions. Jury rig your HTTP headers and then send a request for a nonexistent page, or generate a ‘500 Error’, or whatever. The same developer who didn’t bother writing a decent parser for user-supplied data is the same developer who is fastiduous about logging all these errors into a HelpDesk application, database, email, or whatever.
+<br><br>
+3) strncat(), strcpy(), sprintf() … In this day and age who uses these functions? Fortune 1000 companies that want to leverage their legacy code, that’s who.
+<br><br>
+4) Casts and conversions without any sort of validation or Error-catching of pre-cast and post-cast values. This is related to (1), but was present enough to warrant a separate bullet.
+<br><br>
+5) Homemade crypto/obfuscation routines. Developers love XOR and so do I. Same with rand (and related PRNGs).
+<br><br>
+So, that’s what I did for my summer vacation. The summer seemed like 5 years and I’m happy to be back in your class Mrs. Johnson. I’d rather learn to conjugate verbs in Mandarin Chinese than live this last summer again. My hat is off to those who do this sort of stuff for a living without succumbing to the opium dreams of the hash pipe.
+<br><br>
+Peace be unto ye,
+<br><br>
+!Dmitry
+<br><br>
+</body>
+</html>

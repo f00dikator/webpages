@@ -1,0 +1,32 @@
+<html><body><h2>Errata</h2><br>April 25th, 2007<br><br>
+
+BananaGlee. I just love saying that word ;)<br><br>
+
+So, was reading up on the NSA backdoors for Cisco and other OSes, http://cryptome.org/2014/01/nsa-codenames.htm, and got to thinking about how the NSA might exfiltrate their data or run updates…It’s gotta be pretty stealthy, and I’m sure they have means of reflecting data to/from their Remote Operations Center (ROC) in such a way that you can’t merely look at odd destination IPs from your network.
+<br><br>
+
+This got me thinking about how I would find such data on a network. First off, obviously, I’d have to tap the firewall between firewall and edge router. I’d also want to tap the firewall for all internal connections. Each of these taps would be duplicated to a separate network card on a passive device.
+<br><br>
+
+1) eliminate all traffic that originated from one interface and went out another interface. This has to be an exact match. I would think any changes outside of TTL would be something that would have to be looked at.
+<br><br>
+
+2) what is left after (1) would have to be traffic originating from the firewall (although not necessarily using the firewalls IP or MAC). That’s gotta be a much smaller set of data.
+<br><br>
+
+3) With the data set from (2), you’ve gotta just start tracing through each one.
+<br><br>
+
+This would, no doubt, be tons of fun. I don’t know how often the device phones home to the ROC, what protocol they might use , etc…
+<br><br>
+
+If anyone has any ideas, I’d love to hear them. I find this extremely fascinating.
+<br><br>
+
+dmitry.chan@gmail.com
+
+<br><br>!Dmitry
+</p>
+
+</body>
+</html>

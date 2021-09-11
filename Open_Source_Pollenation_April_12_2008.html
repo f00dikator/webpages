@@ -1,0 +1,33 @@
+<html><body><h2>Open Source Pollenation</h2><br>April 12th, 2008<br><br>
+
+
+I’m rushing this post out so that this post can be the 1,000th post :)<br><br>
+
+I’ve got a project that I’d love to run, but I just don’t have the time. Here’s what I’m thinking of. I want to crawl Fortune 1000 sites and generate fingerprints on their code (ASP, JavaScript, whatever I can read in plain text). I then want to pull out variable names and other unique identifiers from the culled code. With this, I can:
+<br><br>
+1) see if there has been any cross-pollenation across the sites
+<br><br>
+2) See if any of these Fortune 1000 web developers have embedded open source code within their app.
+<br><br>
+3) If (2), I’d like to run the open source code through a static source code analyzer and see if there are any ‘gotchas’.
+<br><br>
+A few months ago, I did this exercise for a single Fortune 1000 company. I wasn’t really surprised to find a bunch of open source libs in use. In this particular case, I didn’t even need to use google codesearch to find the package that they were using. The company had left all the GNU comment info within the source. It also wasn’t surprising to find that the developers had installed the entire open source project under an ‘include’ directory, even though my spider only found a link to several of the ‘.js’ files. And, lastly, searching bugtraq for this particular product revealed that they were running an older, vulnerable version of their open source software. Mildly interesting. I’d love to automate this. A cool product would:
+<br><br>
+1) spider a site and download all their code (even HTML can have comment fields or variable names which can be used to track the HTML back to an open source app)
+<br><br>
+2) Use some algorithm to find uniq identifiers within the code. Store these identifiers.
+<br><br>
+3) Use some algorithm to compare these identifiers to other sites which have already been spidered and stored.
+<br><br>
+4) Feed these identifiers to ‘google codesearch’ to see if the code is part of a larger, open source project.
+<br><br>
+5) If (4) use some algorithm to determine the version level. Query bugtraq for flaws within the observed version.
+<br><br>
+6) Run the code through some static analyzers looking for coding flaws.
+<br><br>
+That’s it. Happy 1,000-post birthday Securiteam blogs!
+<br><br>
+!Dmitry
+
+</body>
+</html>

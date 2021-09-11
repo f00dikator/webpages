@@ -1,0 +1,49 @@
+<html><body><h2>Take this silt</h2><br>January 1, 2007<br><br>
+
+Happy New Year! It’s 2007 and one of my goals is to do less work and spend more time with my family. I think we all have things on our ‘TODO’ list that, at some point, we have to acknowledge we will never get around to. I keep a folder of interesting snippets that I always intended to come back to. In reviewing my ‘snippet’ list, I see things from 2001 and 2002 that I’m not even close to getting around to. I see applications that I downloaded in 1999 or 2000 that I never got around to breaking or even installing. And, worse, I’ve got other snippets that have been deposited that take precedence over these older snippets. Jeremiah Grossman blogged about something similar on his blog. To cut to the chase, I have some silt from the bottom of my TODO pool that is muddying the water of my brain…I’d like to give it to you. Maybe you’ll find some gold.
+<br><br>
+Wouldn’t it be cool if you could do a pen-test of a company and have the ability to root their internal machines? I’m talking about the machines that reside inside the network – behind all the DMZes, proxies, firewalls, policy routers, etc. A nice juicy machine sitting in the ripe delta of a virgin network. It’s do-able, but it’ll take a little work. Here are a few examples.
+<br><br>
+1) How many companies run hardened SMTP servers on the edge of their network. These machines are usually anti-virus scanners and have been fuzzed to death. They are hard to break into. However, if they forward email to an internal (juicy) server which is the same server which handles bounces…well, then now we have a situation where we can coerce an internal server into connecting to us. At the least, we get a connect from their outbound SMTP relay which is often a different machine than their hardened primary MX servers.
+<br><br>
+2) similar idea for DNS servers. Your scanner typically won’t be able to exploit (or even see) the companies recursive DNS servers. But, if we can find some service which resolves an IP to a FQDN or vice versa (“HELO x.x.x.x”), then all we need to do is connect to that service from an IP range where we control the DNS. Now, we have their DNS server connecting to us.
+<br><br>
+Of course, all of this presupposes that you have already reverse-fuzzed the juicy applications in your lab and have a nice exploit for them. The last time I checked, these sort of exploits weren’t hard to come by. The same application that verifies byte-size, order of each byte, regex, etc. of each line of *inbound* SMTP header will happily recv() and process 4097 malicious bytes of a 220 banner when initiating an outbound SMTP connection. I wish I could go on this hunt, but I don’t have the time, resources, or otherwise. May the heads of Exchange, Novell, and Lotus decorate your hunting lodge.
+<br><br>
+3) Years ago, I wrote a program that automated a lot of fingerprinting of a target domain. Here is what the help screen looked like:
+<br><br>
+[root@tekakwitha root]# ./footprinter -h
+<br><br>
+Usage: ./footprinter -C “FULL_COMPANY NAME” -D “domain.{net,com,edu},domain2” [-W Whois.server]<br>
+-C : Company name. Can be multiples, ie -C “Company 1,Company 2,Company 3”, etc…<br>
+-D : Domain(s). Can be multiples, ie -D “sony.com,google.com,philly.com”, etc…<br>
+-h : This message<br>
+-c : Crawl www.sec.gov EDGAR DB looking for “subsidiary” regexp<br>
+-H : Search for DNS HST records and query for domain authority (if company maintains DNS)<br>
+-W : Specify a different whois server (default is whois.arin.net)<br><br>
+
+I never got the program debugged (or even working right). It would be cool to have a program that would find company dependencies, other companies registered by the same email addr as our target domain, other domain servers for subsidiary domains, other mail servers for linked domains, remote sites which pay for a DSL connection but registered it with the parent companies domain name or email addr…etc. When I worked for a large Fortune 500 company, I found many remote sites which were connected to the Corporate belly via a 56k line. Since they didn’t want 500 employees hitting the web via their 56k link which also carried business data, they paid for their own DSL link to the Internet. Of course, rooting the DSL router was akin to gaining full access to the internal Corporate network.
+<br><br>
+4) on a similar note, finding devices on a network which are NAT-ing traffic is an interesting exercise. This list would include proxies, wireless APs, cable/DSL routers, firewalls, etc. If I’m working for a large Corp, I want to know where my dual-homed hosts reside.
+<br><br>
+5) I want my vulnerability scanner to tell me if any of the IPs within my scan range have been used recently in any sort of spam relaying. That’s an easy one.
+<br><br>
+6) I want my application scanner to go through google’s cache, wayback machine, etc and tell me links and apps that used to exist but are no longer spider-able (but, might still exist), parameters that used to be passed to apps, etc. That’s useful information and I would add it into my spidered data as if the data *was* there (because it often is).
+<br><br>
+7) I want my application scanner to detect browser-side parsing and then tell me where the same parsing is not being done on the server side. In fact, I have a long wishlist for application scanners. I’ll just stop here. In general, *Intelligence* is missing from application scanners. That’s why I end up doing stuff by hand (trap-modify-send-repeat) and why I have started hating application scans…
+<br><br>
+8) I want my fuzzer to be able to speak (in real time) with the process of the app that I’m fuzzing. I think Jared from MSU might be doing something like this in the future…so, I’ll just wait for this one 🙂
+<br><br>
+9) I want to know why bearshare webserver filters out 11 characters (left as an exercise to the reader…I don’t want to have to look up the HTML codes to get them printed on the blog) and any byte above 0x80 in the *initial* request but then allows it for all subsequent requests.
+<br><br>
+10) On Microsoft RPC on 135, why does fiddling with the “DCE Maximum Entries” field often cause crashes or memory issues?
+<br><br>
+11) Why would a company store a web log called logs.txt in the web root and store passwords within the log in a simple XOR?
+<br><br>
+12) Why is it so easy to knock over h.323 devices? Or, in general, most VoIP protocols. Wasn’t there gonna be some company that wrote a voip fuzzer and then tested all these devices, sending the results off to CERT or some other body for dispersal?
+<br><br>
+Well, again, Happy New Year. I already feel lighter and strangely rejuvinated :) <br><br>
+
+!Dmitry
+</body>
+</html>

@@ -1,0 +1,12 @@
+<html><body><h2>Asset categorization (or, why I like CVSS)</h2><br>December 29th, 2005<br><br>
+
+A security group *must* know the value of the assets that they are protecting. Ideally, you determine this value *before* designing your security infrastructure. You cannot design an optimized security architecture without defining critical assets…yet, I see it happening all the time. Security gets worked in on the back end. That’s a problem.
+<br><br>
+Along a similar vein, Vulnerability scanners are a great tool if deployed at the correct time and used correctly. However, a vulnerability scanner cannot tell you the monetary worth of the system that it has just scanned. I’ve seen too many companies that crank up Nessus, run a scan of an entire /16 block, and then start remediating from the top of the report to the bottom. Again, that’s a problem.
+<br><br>
+So, how does that tie into CVSS? Well, CVSS is a system for assigning a numeric value to a specific flaw. There are a number of factors which go into determining this value; however, the end result is just a positive integer between 0 and 10. This information, coupled with the asset value, gives you a clearly defined list of remediation priority. Multiply the asset value with the CVSS ranking. Presto! You have a prioritized list to give to your Compliance team.
+<br><br>
+!Dmitry
+
+</body>
+</html>

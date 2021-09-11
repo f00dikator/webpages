@@ -1,0 +1,24 @@
+<html><body><h2>Kiosk Security</h2><br>Dec 5th, 2008<br><br>
+
+Regarding http://blogs.securiteam.com/index.php/archives/1165 , I won’t be able to do daily posts…I’m just way too busy for that…
+<br><br>
+A few months back, I was sent a 4-foot tall, 80 pound kiosk in the mail.  I had 32 hours (one weekend) to figure out how to break the software.  It only took a few hours, so I thought I’d put together a list of Kiosk 101 security bullets.
+<br><br>
+1) Encrypt *all* of the traffic.  If you’re not using certificates, it is downright trivial to modify a DNS server (or write a quick MITM proxy) to point your web/xml client to some other web site.  Plus, do you really want your clients order, warranty information, address, phone number, best time to contact, etc passed in plain text over the web?
+<br><br>
+2)  Do not trust the store network.  Assume that someone malicious can both read AND write data on the store network.
+<br><br>
+3) Port scan or do a netstat on the kiosk OS to ensure that your kiosk isn’t set up with a service that binds a socket that you haven’t thought to ACL.  I thought it unusual to find 6 open TCP ports on a secured kiosk device.  For that matter, how about just blocking everything except the ports that you need?
+<br><br>
+4) disable broadcast services, especially ones that tell the passive listener the OS, system name, etc.
+<br><br>
+5) there is more at risk than just the kiosk.  Consider the attacker who figures out how the client protocol works and then uses this information to spoof a malicious client and attack the server.
+<br><br>
+6) disabling the cache on the local system isn’t the same as always storing confidential data securely (in transit and at rest).  Assume that the attacker can figure out your “magic key strokes” (maybe by recording a technician servicing the machine??????) and get local access.
+<br><br>
+7) This will be a service nightmare, but the devices shouldn’t be configured with the same accounts and passwords.  If you break one kiosk, you shouldn’t be given the keys to all of the same kiosks.
+<br><br>
+!Dmitry<br><br>
+
+</body>
+</html>

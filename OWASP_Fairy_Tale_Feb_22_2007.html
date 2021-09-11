@@ -1,0 +1,23 @@
+<html><body><h2>OWASP Testing Guide released (and, what might be a fairy tale?)</h2><br>Feb 22nd, 2007<br><br>
+
+
+It don’t know exactly when it started…but, at some point a few years ago, network pen-tests started becoming 10% network scanning and 90% web application scanning. I guess it was around 2003 or so???? At any rate, I was working on a pen-test team for a large Fortune ^[1-9]{2}$ company and we ran out of vulnerable network apps. We were scared, since lack of vulnerable apps meant that the network pen-testing team was gonna lose staff, lose resources, or both. Not good. We knew that we had about 6 months until the current flaws made it through the Compliance team, out to the business units, down to the IT director, down to the first manager, down to the second manager, down a few more managers, and finally to the admin who would fix the bug in about 10 minutes (albeit 6 months late).<br><br>
+
+In a hysterical state, we tried the obvious. Yes, we elevated Traceroute and non-ICMP-filtering issues to High Risk. Bad move - we’re losing credebility.
+<br><br>
+So, in what can only be considered a move of sheer genius, we turned up our timeout values on Nessus, told it to recurse more than 20 pages into the webserver, and let the scan run for a few hours. OMG! We found flaws. XSS? “Could this be a ‘High’ Risk?”, we whispered amongst ourselves. SQL Injection? Oh Yes! We were ecstatic. For the first time in years, my wife heard me hollering ‘I’ve got root…errr Admin’ from the downstairs office. Our plate was full. We were feasting on hearty portions of web flaws. The compliance team had to double-up in staff. The scan team started working 5 days a week from home during scan window. Looking back, I think of these times as our ‘Salad Days’. Our blood wasn’t cold but our judgement was surely green…and autumn was coming….
+<br><br>
+I think our team went through a normal progression. The bugs started falling off after a year or so. The developers started using a secure code development lifecycle. We were having to scan for hours just to find some crummy ‘500 Error’ page. Suddenly XST (which would have been a small appetizer a few months back) looked like the next coming of the Morris worm. We’ve purchased 3 or 4 commercial web scanners. We’re brute-forcing the web server for hidden directories. We’re trying to encourage the use of PHP. I think there were even some guys paying the developers for the URI of test apps. In short, we had become web-app-bug-addicts. And, the bugs were getting harder to come by.
+<br><br>
+Fast forward to 2007. I’d like to say that things have changed…but, they haven’t. I’m still Jonesing for a good hit and here it comes :-)
+<br><br>
+Just released! OWASP Testing Guide
+<br><br>
+I’m already tingling with anticipation. Time to get my swerve on ;)
+<br><br>
+!Dmitry
+<br>
+dmitry.chan@gmail.com
+
+</body>
+</html>

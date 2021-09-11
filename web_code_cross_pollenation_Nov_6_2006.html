@@ -1,0 +1,78 @@
+<html><body><h2>Web Code (and other) cross pollenation</h2><br>November 6th, 2006<br><br>
+
+I alluded to this in a previous post.<br><br>
+
+It’s trivial to spider a site, find all the .jpg|.gif|.bmp|.whatever images and then, if the file name is sufficiently random, google for other sites which may be using the same graphics file. Now, with the release of Google’s codesearch, I can take my searches to a new level. It is my opinion that webserver content has become quite cross-pollenated over the years. And, it’s not just limited to web content…
+<br><br>
+
+Lately, I’ve been looking at things like small blocks of code, variable names, and comments within source code. I then use google’s codesearch to find other apps which use the same strings. Here is an example:
+<br><br>
+route (Mike S.) includes some example C code with his libnet libraries. In libnet-example-1.c, we have:
+<br><br>
+int network, packet_size, c;<br>
+u_long src_ip, dst_ip;<br><br>
+
+Now, look at this query
+<br><br>
+And, you see what I’m talking about. Now, that’s marginally interesting. Questions like, who is using Nmap source code in their proprietary scanner or who stole a nessus plugin for their python scanner? can make for interesting water-cooler discussions…
+<br><br>
+*More* interesting is when you are doing a code audit for a company with their own home-grown apps…and, you find large chunks of open source code within these apps. It’s interesting because:
+<br><br>
+1) it’s just fun to watch people steal stuff and claim it as their own and
+<br><br>
+2) when they steal from an open source product that later had bugs, they are in a bit of a quandry because if they piece-mealed from open source, then they aren’t in a position where they can easily patch or upgrade. They have to fix it themselves. For the auditor, finding a closed-source app which contains large amounts of open-source code means that there is a chance that someone has already looked for flaws in that code. Looking for past bugs in the open-source app might lead to finding bugs in the closed-source app. And, that feeds my laziness gene.
+<br><br>
+I’m gonna automate this process, methinks.
+<br><br>
+1) go through the source and grab hunks of code which are of a suitable length (we don’t want ‘int i;’, for instance).
+<br><br>
+2) Lookup that hunk of code on codesearch
+<br><br>
+3) Report
+<br><br>
+Other intesting stuff to look for:
+<br><br>
+1) Order of include files<br><br>
+- did they start with string.h, math.h, stdio.h, and arpa/inet.h?<br>
+- do they exactly match order of imports? Do they use separate lines for importing?<br>
+- from sys import argv, stdin, exit<br>
+- from sys import exit, stdin, argv<br>
+- import re,sys,socket,string,time<br>
+- Heh. Here’s a funny one. People who steal includes or imports and include files which aren’t ever even needed by the compiler or interpreter :-)<br><br>
+
+2) order of macros (since we probably wouldn’t evaluate each separate line individually)
+<br><br>
+3) order of variable initialization
+<br><br>
+4) binary code converted to another format
+- “\x94\x3D\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x20\x43\x4B\x41″<br>
+- 0×94,0x3D,0×00,0×00,0×00,0×01,…<br>
+- |943D00000001…<br><br>
+
+5) comments converted to another format (why steal code and bother re-formatting the stolen comments?)<br><br>
+- //Ensure that recv buffer is not NULL<br>
+- #Ensure that recv buffer is not NULL<br>
+- /*Ensure that recv buffer is not NULL<br><br>
+
+6) Upper vs lower case and use of spaces within variable init<br>
+- File *myINPUT =<br>
+- FILE * MyInput =<br>
+- FILE *MYINPUT=<br><br>
+
+7) Copyright (or left) information which is commented out.
+<br><br>
+I’m sure there are a many more ways of finding source horkage. This will be fun.
+<br><br>
+Unrelated. This is a good month for new security tools.
+<br><br>
+Pantera . Still barebones, but I like their passive features and when they get around to borrowing Dave’s SPIKE fuzzing routines, this will be nice. Interface is a nice improvement.
+<br><br>
+New release of SinFP. I love this tool
+<br><br>
+Metasploit . This project rocks.
+<br><br>
+<p>!Dmitry
+</p>
+
+</body>
+</html>

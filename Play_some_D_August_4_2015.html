@@ -1,0 +1,29 @@
+<html><body><h2>Errata</h2><br>April 25th, 2007<br><br>
+
+Hi there. Long-time-no-blog :) <br><br>
+
+If you haven’t already, go read this: https://t.co/d2hwhmzzuz
+<br><br>
+Note: this blog applies to Corporate networks. If you’re a coffee shop or a college, you’re on your own 🙂
+<br><br>
+I’ve been a network defender for many years. I currently work for a software company that builds network software which helps companies gain insight into how their network is being used and/or abused. I didn’t choose to go into network defense – it chose me. In 1997 at my first “real job” out of college, I was a part of a team that tracked down some hackers that were running around owning a bunch of Solaris servers. From that day, I was hooked.
+<br><br>
+Network defenders don’t get a lot of credit. If you do your job right, no one ever talks about it. If you do your job wrong, you’ll hear about it every day for the rest or your short-lived career. An attacker can be wrong a million times and only needs to be right once. That’s an advantage. An attacker can spend 2 years in the bowels of one software app. A defender cannot. Accept this fact and move on…we can still win. The attacker has to use your network whilst evading detection. A lot of them don’t spend a lot of time figuring out how to do this right. They don’t have to be stealthy about exfiltrating data because it hasn’t mattered – the defense has been weak. How many recent infections used the darknet as a C&C?…ummm, your network monitoring solution should be SCREAMING AT YOU if someone connects out via Tor or i2p.
+<br><br>
+The network is like a bodies immune system (though not nearly as complex). The job, if you’re up to it, is to be the immune system. You can’t stop all infections from getting in. In fact, it can be argued that infections must get in to build the immune system. Firewalls and other devices can block things that we have knowledge of; however, something that we haven’t previously encountered will eventually get in (maybe via email, hacked USB drive, 0-day, whatever). Our job is to detect the foreign body, eradicate it, and update the immune system such that that strain of virus can no longer get it. So, how can you do this?
+<br><br>
+1) know what is “normal” for each host on your network. What ports do they offer? What ports do they connect to? What do their traffic patterns look like for each port? Who do they talk to? Who talks to them? what network protocols do they speak? How long do sessions stay nailed up? If you know this sort of stuff, then an attacker exfiltrating a gig of data cannot be hidden…it’ll stick out like a clown at an IBM business meeting.
+<br><br>
+2) Method 1 will detect lateral movement, but if you employ dead space within your network, you can flag lateral movement with just a single packet. Use honeynets, host-based IDS, traffic analysis (why is engineering dept trying to talk to HR?), etc. Spray your databases with bogus data that should never be accessed. Put up fake file servers and watch for access or watermark the files and watch them if they move around the network. Be creative…make your network a hostile environment for those who would attack it. The locals know how to get around, the attacker will have to figure out how to move around the network. Make this a painful process for him/her.
+<br><br>
+3) Look for invalid use of standard ports. Have you ever seen Skype find an “out door” on a network…What about vpn, i2p, p2p, Tor,etc.? Sending outbound traffic over well known ports is very, very common on most networks I have monitored. For each outbound port allowed through your firewall, you should flag on anomalous traffic over that port. What is anomalous? If the port is 80, only valid HTTP should flow over that port. If the port is 443, only TLS/SSL should flow over that port. Find the people tunneling data or sessions out of your network and you have a short list of the folks to keep an eye on.
+<br><br>
+4) Let the users know that you are watching. If Mabel from Accounting comes in on Monday morning and uploads 2 gig of baby pictures to dropbox, you should go have a chat with her. Get the word out. User education is often overlooked…millions is spent on nifty software but you don’t even have a full time employee working on user education. Sad.
+<br><br>
+There’s a lot more that I could write, but network defense isn’t a “cookie cutter” operation. Each admin will have to be creative and come up with their own maze for the attackers to run. Good luck out there!
+<br><br>
+!Dmitry<br><br>
+dmitry.chan@gmail.com
+
+</body>
+</html>
