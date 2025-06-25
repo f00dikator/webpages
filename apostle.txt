@@ -1,0 +1,8 @@
+Jennlog Loader (Apostle Loader)
+0ba324337b1d76a5afc26956d4dc9f57786483230112eaead5b5c92022c089c7
+
+Apostle – Bar-Ilan variant
+44c13c46d4f597ea0625f1c87eecffe3cd5dcd257c5fac18a6fa931ba9b5f97a
+
+Jennlog Loader (OrcusRAT Loader)
+14659857df1753f720ac797a43a9c3f3e241c3df762de7f50bbbae00feb818c9
