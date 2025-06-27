@@ -1,18 +1,15 @@
 {
   "query": {
     "bool": {
-      "must": {
+      "should": [
+        { "wildcard": { "http.request.method": { "value": "GET", "case_insensitive": true } } },
+        { "wildcard": { "http.request.method": { "value": "POST", "case_insensitive": true } } }
+      ],
+      "minimum_should_match": 1,
+      "filter": {
         "regexp": {
           "http.url": {
-            "value": "[a-zA-Z0-9_]+",
-            "case_insensitive": true
-          }
-        }
-      },
-      "must_not": {
-        "regexp": {
-          "http.url": {
-            "value": "(issuedby|sign\\.te|revoked).*",
+            "value": "/_(cat|cluster|nodes|sql|search|mapping|snapshot|bulk|aliases).*",
             "case_insensitive": true
           }
         }
