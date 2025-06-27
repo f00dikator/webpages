@@ -17,3 +17,15 @@
     }
   }
 }
+
+investing a few hours in detection rules for Elasticsearch API abuse protects us from real, high-impact threats.
+
+High-Severity CVEs Are Actively Exploited • CVE-2015-1427 (Groovy scripting RCE, CVSS 9.8): allowed unauthenticated remote code execution via crafted scripts in Elasticsearch <1.3.8 and 1.4.x <1.4.3. That’s full server takeover—every single cluster exposed to the Internet was vulnerable. • CVE-2023-31419 (Stack-overflow DoS in _search API, CVSS 6.5): a malformed query crashes the node, causing downtime1. • CVE-2024-43709 (SQL API OutOfMemory DoS, CVSS 6.5): malicious SQL functions (e.g. repeat(…)) can consume all heap and kill the node.
+
+These CVEs demonstrate that both data theft (RCE) and service disruption (DoS) are trivial once these APIs are reachable.
+
+Real-World Breaches and Scanning Campaigns • Thousands of clusters have been left wide-open on port 9200. Automated scanners (Shodan, masscan, custom scripts) routinely probe paths like /_cat/indices or /_search?q=*:* to inventory and exfiltrate data. • In 2019 alone, multiple incident reports showed unprotected Elasticsearch instances leaking PII—everything from customer addresses to internal logs—because no authentication was enforced. Attackers chained simple GET requests to dump entire indices in minutes.
+
+Business Impact • Data Leakage: Exposed indices may contain sensitive customer data, IP addresses, credit-card-related logs, or internal metrics. A single GET /_search?q=*:* can broadcast entire datasets. • Service Downtime: DoS via malformed API calls can take down clusters, interrupting critical search, logging, and alerting pipelines. • Regulatory and Reputational Risk: Leaking PII or internal secrets can trigger GDPR/CCPA fines and media scrutiny.
+
+Why Detection Rules Pay for Themselves • Early Warning: Flagging any GET|POST to /_cat*, /_search, /_sql, /_mapping, etc., lets us catch reconnaissance and block it before escalation. • Rapid Triage: Correlate suspect API hits with source IP, user agent and volume—quickly separate errant scanners from legitimate clients. • Low Effort, High ROI: A handful of DSL lines in Kibana (see previous query) cover dozens of known attack vectors and vulnerabilities.
