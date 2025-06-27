@@ -9,7 +9,7 @@
       "filter": {
         "regexp": {
           "http.url": {
-            "value": "/_(cat|cluster|nodes|sql|search|mapping|snapshot|bulk|aliases).*",
+            "value": "/_(cat|cluster|nodes|sql|mapping|snapshot|bulk|aliases).*",
             "case_insensitive": true
           }
         }
