@@ -1,1 +1,11 @@
-dd
+alert tcp any 80 -> $HOME_NET any (
+    msg:"Suspicious HTTP response advertising QUIC with encoded payload";
+    flow:to_client,established;
+    content:"Alternate-Protocol: 80:quic"; http_header;
+    content:"Content-Encoding: gzip"; http_header;
+    content:"\r\n\r\n"; depth:4; distance:0;
+    pcre:"/^.{91}$/s"; http_client_body;
+    classtype:protocol-command-decode;
+    sid:900091;
+    rev:1;
+)
