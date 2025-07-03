@@ -1,15 +1,1 @@
-{
-  "query": {
-    "bool": {
-      "must": [
-        { "match": { "http.response_headers": "Alternate-Protocol: 80:quic" }},
-        { "range": { "http.response_body_length": { "gte": 80, "lte": 100 }}}
-      ],
-      "should": [
-        { "match": { "http.content_encoding": "gzip" }},
-        { "match": { "http.response_body": "_" }}  // underscore hinting at URL-safe base64
-      ],
-      "minimum_should_match": 1
-    }
-  }
-}
+dd
