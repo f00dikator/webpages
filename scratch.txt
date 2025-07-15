@@ -9,3 +9,11 @@ alert tcp any 80 -> $HOME_NET any (
     sid:900091;
     rev:1;
 )
+
+{
+  "query": {
+    "wildcard": {
+      "http.request.headers.user-agent": "*Sparkle*"
+    }
+  }
+}
