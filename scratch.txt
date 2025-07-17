@@ -17,3 +17,27 @@ alert tcp any 80 -> $HOME_NET any (
     }
   }
 }
+
+
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "regexp": {
+            "http.url": {
+              "value": ".*(%EF%BC%BC|\\\\xef\\\\xbc\\\\xbc).*",
+              "flags": "ALL",
+              "case_insensitive": true
+            }
+          }
+        },
+        {
+          "match": {
+            "http.request.method": "GET"
+          }
+        }
+      ]
+    }
+  }
+}
