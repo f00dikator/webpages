@@ -1,4 +1,5 @@
 \{.*?"[^"]*\b(whoami|curl|wget|bash|sh|ls|cat|echo|id|uname|hostname|ping|netstat|python|perl|php|sudo|su|rm|cp|mv|chmod|chown)\b[^"]*?" 
+\b(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+(?:[a-zA-Z]{2,})\b
 
 
 
