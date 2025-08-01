@@ -6,22 +6,18 @@
 {
   "query": {
     "bool": {
-      "must": [
-        {
-          "regexp": {
-            "http.url": {
-              "value": ".*(%EF%BC%BC|\\\\xef\\\\xbc\\\\xbc).*",
-              "flags": "ALL",
-              "case_insensitive": true
-            }
-          }
-        },
-        {
-          "match": {
-            "http.request.method": "GET"
-          }
-        }
-      ]
+      "should": [
+        { "match_phrase": { "http.url.keyword": "/submit.php" } },
+        { "match_phrase": { "http.url.keyword": "/news.php" } },
+        { "match_phrase": { "http.url.keyword": "/jquery-3.3.1.min.js" } },
+        { "match_phrase": { "http.url.keyword": "/login/process.php" } },
+        { "match_phrase": { "http.url.keyword": "/api/status" } },
+        { "match_phrase": { "http.url.keyword": "/update" } },
+        { "match_phrase": { "http.url.keyword": "/style.css" } },
+        { "match_phrase": { "http.url.keyword": "/images/logo.png" } },
+        { "match_phrase": { "http.url.keyword": "/collaborate/collect" } }
+      ],
+      "minimum_should_match": 1
     }
   }
 }
