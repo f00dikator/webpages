@@ -12,3 +12,6 @@ phpmonitor
 
 phpmonitor client with magic headers, payload, etc. Should still work with 2025-25256
 https://github.com/horizon3ai/CVE-2023-34992/blob/main/CVE-2023-34992.py
+
+Write-up on last phmonitor exploit from 2023
+https://horizon3.ai/attack-research/disclosures/cve-2023-34992-fortinet-fortisiem-command-injection-deep-dive/
