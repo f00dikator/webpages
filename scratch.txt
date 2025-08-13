@@ -1,23 +1,11 @@
-\{.*?"[^"]*\b(whoami|curl|wget|bash|sh|ls|cat|echo|id|uname|hostname|ping|netstat|python|perl|php|sudo|su|rm|cp|mv|chmod|chown)\b[^"]*?" 
-\b(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+(?:[a-zA-Z]{2,})\b
+alert tcp any any -> any 7900 (
+    msg:"FortiSIEM phMonitor traffic with magic header";
+    content:"|00 00 00 00|";
+    offset:0;
+    depth:4;
+    sid:790001;
+    rev:1;
+)
 
-
-
-{
-  "query": {
-    "bool": {
-      "should": [
-        { "match_phrase": { "http.url.keyword": "/submit.php" } },
-        { "match_phrase": { "http.url.keyword": "/news.php" } },
-        { "match_phrase": { "http.url.keyword": "/jquery-3.3.1.min.js" } },
-        { "match_phrase": { "http.url.keyword": "/login/process.php" } },
-        { "match_phrase": { "http.url.keyword": "/api/status" } },
-        { "match_phrase": { "http.url.keyword": "/update" } },
-        { "match_phrase": { "http.url.keyword": "/style.css" } },
-        { "match_phrase": { "http.url.keyword": "/images/logo.png" } },
-        { "match_phrase": { "http.url.keyword": "/collaborate/collect" } }
-      ],
-      "minimum_should_match": 1
-    }
-  }
-}
+phpmonitor
+^\x00{4}.{0,512}\b(ping|netstat|curl|hostname|wget|id)\b
