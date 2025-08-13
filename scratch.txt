@@ -8,7 +8,7 @@ alert tcp any any -> any 7900 (
 )
 
 phpmonitor - hyperscan regex
-(?i)^\x00{4}.{0,512}\b(ping|netstat|curl|hostname|wget|id)\b
+(?i)^\x00{4}.{0,512}\b(ping|netstat|curl|hostname|wget|id|nc)\b
 
 phpmonitor client with magic headers, payload, etc. Should still work with 2025-25256
 https://github.com/horizon3ai/CVE-2023-34992/blob/main/CVE-2023-34992.py
