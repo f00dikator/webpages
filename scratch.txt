@@ -1,17 +1,12 @@
-alert tcp any any -> any 7900 (
-    msg:"FortiSIEM phMonitor traffic with magic header";
-    content:"|00 00 00 00|";
-    offset:0;
-    depth:4;
-    sid:790001;
-    rev:1;
-)
+
 
 phpmonitor - hyperscan regex
-(?i)^\x00{4}.{0,512}\b(ping|netstat|curl|hostname|wget|id|nc|uname|bash|sh)\b
+(?i)^.{0,512}\b(ping|netstat|curl|hostname|wget|id|nc|uname|bash|sh)\b
 
-phpmonitor client with magic headers, payload, etc. Should still work with 2025-25256
-https://github.com/horizon3ai/CVE-2023-34992/blob/main/CVE-2023-34992.py
+better breakdown of proto
+0) Command Type – The integer enum mapped to specific function handlers inside the phMonitor service
+1) Payload Length – The length of the payload in the message
+2) Send ID – An arbitrary integer value passed in the message
+3) Sequence ID – The sequence number of this message
+4) Payload – The specific data the function handler within phMonitor will operate on
 
-Write-up on last phmonitor exploit from 2023
-https://horizon3.ai/attack-research/disclosures/cve-2023-34992-fortinet-fortisiem-command-injection-deep-dive/
