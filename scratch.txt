@@ -1,12 +1,28 @@
+import cbor2
+import os
+import sys
 
+# Path to your .bundle file
+bundle_path = sys.argv[1]
+output_dir = "extracted_files"
 
-phpmonitor - hyperscan regex
-(?i)^.{0,512}\b(ping|netstat|curl|hostname|wget|id|nc|uname|bash|sh)\b
+# Ensure output directory exists
+os.makedirs(output_dir, exist_ok=True)
 
-better breakdown of proto
-0) Command Type – The integer enum mapped to specific function handlers inside the phMonitor service
-1) Payload Length – The length of the payload in the message
-2) Send ID – An arbitrary integer value passed in the message
-3) Sequence ID – The sequence number of this message
-4) Payload – The specific data the function handler within phMonitor will operate on
+# Load CBOR data
+with open(bundle_path, "rb") as f:
+    decoded = cbor2.load(f)
 
+# Check if it's a dict
+if isinstance(decoded, dict) and "files" in decoded:
+    for file_entry in decoded["files"]:
+        filename = file_entry.get("name", "unnamed_file")
+        content = file_entry.get("content", b"")
+
+        # Write to disk
+        out_path = os.path.join(output_dir, filename)
+        with open(out_path, "wb") as out_file:
+            out_file.write(content)
+        print(f"Extracted: {out_path}")
+else:
+    print("Unexpected bundle structure. Top-level object is not a dict or missing 'files' key.")
